@@ -1,0 +1,291 @@
+llz<form>
+    <input type="text">
+    <p>
+        <label for="mail"> Электронная почта</label>
+        <input 
+        type="email"
+        id="mail">
+    </p>
+    <p><button type="submit">Отправить</button></p>
+</form>
+
+
+<form>
+    <fieldset>
+        <legend>Ваш пол</legend>
+            <p>
+                <input 
+                type="radio"
+                name="gender"
+                id="mane"
+                value="mane">
+                <label for="mane"> Муж.</label>
+            </p>
+            <p>
+                <input 
+                type="radio"
+                name="gender"
+                id="women"
+                value="women">
+                <label for="women"> Жен.</label>
+            </p>
+    </fieldset>
+</form>
+
+
+<form >
+    <fieldset>
+        <legend>Соц опрос: Выберите два утверждения которые верны</legend>
+        <p>
+            <input type="checkbox"
+             name="agree" 
+             id="agree">
+             <label for="agree">В нашем городе всегда чистота и порядок</label>
+        </p>
+        <p>
+            <input type="checkbox"
+             name="agree2" 
+             id="agree2">
+             <label for="agree2">В нашем городе постоянные иновации</label>
+        </p>
+        <p>
+            <input type="checkbox"
+             name="agree3" 
+             id="agree3">
+             <label for="agree3">Наш мэр обустраивает город и метро каждый год</label>
+        </p>
+    </fieldset>
+</form>
+
+
+<form>
+    <p>
+        <label for="num">Введите номер телефона</label>
+        <input 
+            type="tel"
+            id="num"
+            name="user-phone">
+    </p>
+    <p>
+        <button type="submit">Отправить туда епт</button>
+    </p>
+</form>
+
+
+<form>
+    <p>
+        <label for="mail">Введите email: </label>
+        <input 
+            type="email"
+            name="user-phone"
+            id="mail">
+    </p>
+    <p>
+        <button type="submit">Отправить</button>
+    </p>
+</form>
+
+
+
+<form>
+    <fieldset>
+        <legend>Соц опрос</legend>
+            <p style="text-align: center;">Кем вы себя считаете?</p>
+            <p>
+                <input type="radio" name="gender" id="men" value="men">
+                <label for="men">Мужчина</label>
+            </p>
+            <p>
+                <input type="radio" name="gender" id="women" value="women">
+                <label for="women">Женщина</label>
+            </p>
+            <p>
+                <input type="radio" name="gender" id="it" value="it">
+                <label for="it">Нечто среднее...(Оно)</label>
+            </p>
+    </fieldset>
+</form>
+
+
+<!-- 
+<form >
+    <fieldset>
+        <legend>Соц опрос</legend>
+        <p>
+            Выберите два утверждения: 
+        </p>
+        <p>
+            <input type="checkbox" name="box" value="box">
+            <label for="box">Правда ли что Земля вращается вокруг солнца</label>
+        </p>
+        <p>
+            <input type="checkbox" name="box2" value="box2">
+            <label for="box2">Правда ли что Земля вращается вокруг луны</label>
+        </p>
+        <p>
+            <input type="checkbox" name="box3" value="box3">
+            <label
+                for="box3">
+                Закон Ома звучит так: Сила тока прямо пропорциональна напряжению <br>
+                и обратно пропорциональна сопротивлению</label>
+        </p>
+        <p>
+            <button type="submit">Отправить</button>
+        </p>
+    </fieldset>
+</form> -->
+
+
+
+<form >
+    <p>
+        <label for="fulldate">Введите день, число, месяц, год</label>
+        <input type="date" id="fulldate", name="fulldate">
+    </p>
+
+    <p>
+        <label for="date-local">Введите дату в формате день, месяц, год</label>
+        <input type="datetime-local" name="date-local" id="date-local">
+    </p>
+
+    <p>
+        <label for="month-date"></label>
+        <input type="month" name="month-date" id="month-date">
+    </p>
+</form>
+
+
+
+
+<form>
+    <label for="city">Выберите город</label>
+    <select name="user-city" id="city" required>
+        <option disabled value="" selected>Не выбран</option>
+        <option value="Moscow">Москва</option>
+        <option value="Samara">Самара</option>
+        <option value="Peter">Санкт-Питербург</option>
+    </select>
+    <button type="submit" >Send</button>
+</form>
+
+
+
+<form>
+    <label for="comment">Ваш комментарий</label>
+    <textarea name="Comment" id="comment">Статья фигня давай новую!</textarea>
+    <button type="submit">Отправить</button>
+</form>
+
+
+<form >
+    <fieldset>
+        <legend>Заполните форму</legend>
+        <p>
+            <label for="Login">Логин:</label>
+            <input type="text" id="Login" name="user-login" placeholder="Введите логин">
+        </p>
+        <p>
+            <input type="checkbox" id="all" name="user-quest">
+            <label for="all"> Я согласен со всеми условиями</label>
+        </p>
+        <p>
+            <label for="comment">Ваше сообщение</label>
+            <textarea name="user-comment" id="comment"></textarea>
+        </p>
+        <p>
+            <label for="City">Ваш город</label>
+            <select name="user-city" id="City">
+                <option disabled value="" selected>Не выбран</option>
+                <option value="Moscow">Москва</option>
+                <option value="Samara">Самара</option>
+                <option value="Peter">Санкт-Питербург</option>
+            </select>
+        </p>
+        <p>
+            <label for="district">Ваш район</label>
+            <select name="user-district" id="district">
+                <option disabled value="" selected>Не выбран</option>
+                <option value="center">Центральный</option>
+                <option value="north">Северный</option>
+                <option value="south">Южный</option>
+            </select>
+        </p>
+        <p>
+            <label for="street">Ваша улица</label>
+            <select name="user-street" id="street">
+                <optgroup> <label for="Центральный"></label>
+                    <option selected disabled value="">Не выбрано</option>
+                    <option value="street0">Улица0</option>
+                </optgroup>
+                <optgroup> <label for="Северный"></label>
+                    <option value="street1">Улица1</option>
+                    <option value="street2">Улица2</option>
+                    <option value="street3">Улица3</option>
+                </optgroup>
+                <optgroup> <label for="Южный"></label>
+                    <option value="street4">Улица4</option>
+                    <option value="street5">Улица5</option>
+                    <option value="street Vasya">Улица Васи Пупкина</option>
+                </optgroup>
+            </select>
+        </p>
+    </fieldset>
+    <span><br></span>
+    <fieldset disabled>
+        <p>
+            <label for="request-number">Номер обращения</label>
+            <input id="request-number" name = user-request value="1001">
+        </p>
+        <p>
+            <label for="mail">Ваш email</label>
+            <input type="email" name="user-mail" id="mail" value="dss@mail.ru">
+        </p>
+    </fieldset>
+    <button type="submit">Отправить</button>
+</form>
+
+<form action="">
+    <p>
+        <label for="request-number">Номер обращения</label>
+        <input
+                type="text" 
+                name="text-number" 
+                id="request-number"
+                readonly
+                value="12314124">
+        <button type="submit">Отправить</button>
+    </p>
+</form>
+
+<form action="">
+    <p>
+        <label for="number">Номер обращения</label>
+        <input
+                type="number" 
+                name="text-number" 
+                id="number"
+                inputmode="numeric">
+        <button type="submit">Отправить</button>
+    </p>
+</form>
+
+<button onclick="alert('Хватит тыкать ирод')" autofocus>Нажми на меня</button>
+
+
+<p>
+    <label for="mail">Ваш email:</label>
+    <input type="email" name="email" id="mail" form="user-info">
+</p>
+
+
+<form id="user-info">
+    <p>
+        <label for="name">Введит имя</label>
+        <input name="name" id="name">
+    </p>
+    <p>
+        <button type="submit">Отправить</button>
+    </p>
+</form>
+
+

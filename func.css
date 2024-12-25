@@ -1,0 +1,37 @@
+h1 {
+    text-align: center;
+}
+.funcs {
+    width: 350px;
+    height: 350px;
+}
+
+ol {
+    background-color:rgb(183, 184, 185) ;
+}
+li {
+    background-color: rgb(235, 235, 235);
+    padding-left: 5px;
+    height: 30px;
+    padding-top: 10px;
+}
+
+span {
+    background-color: rgb(235, 235, 235);
+}
+
+.foot li {
+    background-color: white;
+}
+
+.password {
+    mask-type: alpha;
+}
+
+/* .li1 {
+    background-color: rgb(235, 235, 235);
+}
+
+ul li ol li {
+    background:  rgb(235, 235, 235);
+} */
