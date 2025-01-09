@@ -1,0 +1,37 @@
+body {
+    background-color: gray;
+}
+
+/* [href*="hh.ru"] {
+    padding-left: 1.2em;
+    background: url('min-hh-red.png') 0 50%/1em no-repeat;
+}
+
+[href*="habr.com"] {
+    padding-left: 1.2em;
+    background: url('habr.png') 0 50%/1em no-repeat;
+}
+
+[href^="https://"] {
+    color: red;
+}
+
+[href^="http://"] {
+    color: green;
+} */
+
+[href$=".fr/"] {
+    background-image: linear-gradient(
+        white 33%,
+        blue 33%,
+        red 66%
+    );
+}
+
+[href$=".de/"] {
+    background-image: linear-gradient(
+        white 44%,
+        blue 33%,
+        red 66%s
+    );
+}

@@ -1,0 +1,18 @@
+.box-1 {
+    display: block;
+    background-color: palevioletred;
+}
+.box-2 {
+    display: inline;
+    background-color: aqua;
+}
+.box-3 {
+    display: inline-block;
+    background-color: aquamarine;
+    margin: 50px;
+    padding: 20px;
+}
+.box-4 {
+    display: none;
+    background-color: blueviolet;
+}

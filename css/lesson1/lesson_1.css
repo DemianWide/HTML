@@ -1,0 +1,17 @@
+header {
+    background-color: antiquewhite;
+}
+
+p {
+    color: teal;  /* цвет обЬекта */ 
+}
+
+a {
+    color: hotpink;
+}
+
+section {
+    height: 50px; /* высота блока */
+    margin-bottom: 10px;  /* Отступ внизу на 10 пикселей  */
+    background-color: deepskyblue; /* цвет фона */
+}

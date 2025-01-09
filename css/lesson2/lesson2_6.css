@@ -1,0 +1,8 @@
+.error-message {
+    color: red;
+    visibility: hidden
+}
+
+.input.is-invalid + .error-message {
+    visibility: visible;
+}

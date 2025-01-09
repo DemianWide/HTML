@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Специфичность</title>
+    <style>
+        p {
+            color: red !important; /* низкий вес приоритета, когда просто color, будет выше чем в теге если добавить !important */
+        }
+    </style>
+</head>
+<body>
+     <p style="color: green;" > Какого цвета этот текст?</p > /*выше вес приоритета*/
+</body>
+</html>

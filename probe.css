@@ -1,0 +1,9 @@
+* {
+    background-color: beige;
+}
+legend {
+    text-align: center;
+}
+div {
+    display: flex;
+}

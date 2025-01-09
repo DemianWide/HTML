@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" href="probe.css">
+</head>
+<body>
+    <div>
+        <section>
+            <form class="texti">
+                <fieldset>
+                    <legend>Форма регистрации</legend>
+                    <p>                
+                        <label for="login">Логин</label>
+                        <input 
+                            type="text" 
+                            id="login"
+                            name="login"
+                            placeholder="Введите ваш логин"
+                            required
+                            oninvalid="this.SetCustomValidity('Wow')"
+                            oninput="setCustomValidity('Введите логин')">
+                    </p>
+                    <p>
+                        <label for="password">Пароль</label>
+                        <input 
+                            type="password" 
+                            id="password"
+                            name="user-password"
+                            placeholder="Введите ваш пароль"
+                            required
+                            oninvalid="this.SetCustomValidity('Wow')"
+                            oninput="setCustomValidity('Введите пароль')">
+                    </p>
+                    <p>
+                        <label for="mail">Эл.почта</label>
+                        <input 
+                            type="email" 
+                            id="mail"
+                            name="user-mail"
+                            placeholder="Введите вашу почту">
+                    </p>
+                    <p>
+                        <label for="birthday">Дата рождения</label>
+                        <input type="date" name="birthday-date" id="b">
+                    </p>
+                    <p>
+                        <label for="button1">Я согласен со всеми <u>правилами и условиями</u></label>
+                        <input type="checkbox" id="button1" name="button" required
+                        oninvalid="this.SetCustomValidity('Wow')"
+                        oninput="setCustomValidity('Обязательное условие!')">>
+                    </p>
+                    <p>
+                        <label for="button2">Получать рассылку</label>
+                        <input type="checkbox" id="button2" name="button">
+                    </p>
+                    <p>
+                        <button type="submit">Отправить</button>
+                    </p>
+                </fieldset>
+            </form>
+        </section>
+    </div>
+</body>
+</html>

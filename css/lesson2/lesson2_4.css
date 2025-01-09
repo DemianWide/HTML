@@ -1,0 +1,15 @@
+[placeholder] {
+    border: 3px solid darkturquoise;
+}
+
+[type="number"] {
+    box-shadow: 3px 3px 3px 3px indianred;
+}
+
+[type="tel"] {
+    box-shadow: 3px 3px 3px 3px darkblue;
+}
+
+[type="email"] {
+    box-shadow: 3px 3px 3px 3px green;
+}
