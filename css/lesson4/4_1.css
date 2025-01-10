@@ -1,0 +1,49 @@
+div {
+    width: 200px;
+    height: 100px;
+}
+
+.box-1 {
+    padding: 30px;
+    background-color: antiquewhite;
+}
+.box-2 {
+    padding: 10px 50px ;
+    background-color: aquamarine;
+}
+.box-3 {
+    padding: 50px 100px 150px;
+    background-color: blueviolet;
+}
+.box-4 {
+    padding: 50px 100px 150px 200px;
+    background-color: brown;
+}
+
+.box-5 {
+    padding-top: 60px;
+    background-color: bisque;
+}
+
+.box-6 {
+    padding-bottom: 60px;
+    background-color: chartreuse;
+}
+.box-7 {
+    padding-left: 60px;
+    background-color: violet;
+}
+.box-8 {
+    padding-right: 60px;
+    background-color: rgb(189, 143, 87);
+}
+
+.box-9 {
+    padding-block: 100px ;
+    background-color: yellow;
+}
+
+.box-10 {
+    padding-inline: 100px;
+    background-color: tomato;
+}

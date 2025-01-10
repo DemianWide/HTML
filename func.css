@@ -1,18 +1,27 @@
 h1 {
     text-align: center;
 }
+.header1{
+    text-align: center;
+    background-color: rgb(205, 243, 170);
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.header2{
+    background-color: rgb(189, 189, 184);
+}
 .funcs {
     width: 350px;
     height: 350px;
 }
 
 ol {
-    background-color:rgb(183, 184, 185) ;
+    background-color:rgb(206, 208, 209) ;
 }
 li {
     background-color: rgb(235, 235, 235);
     padding-left: 5px;
-    height: 30px;
+    height: 20px;
     padding-top: 10px;
 }
 
@@ -20,14 +29,66 @@ span {
     background-color: rgb(235, 235, 235);
 }
 
-.foot li {
-    background-color: white;
+.foot{
+    background-color: rgb(231, 223, 241);
 }
 
 .password {
     mask-type: alpha;
 }
+.box {
+    margin: 500px;
+}
+.log {
+    display: inline;
+    color: #f70505;
+}
+.numbers {
+    display: inline;
+    color: rgb(206, 26, 146);
+}
 
+.text {
+    display: inline;
+    color: rgb(150, 197, 80);
+}
+
+.let {
+    display: inline;
+    color:rgb(84, 148, 148)
+}
+
+.boxes {
+    border: 2px solid rgb(221, 215, 211);
+    margin: 10px ;
+    padding: 5px;
+}
+
+.none {
+    background-color: white;
+    height: auto;
+    padding-left: 10px;
+}
+
+.coube {
+    display: inline;
+    background-color: hsl(46, 80%, 71%);
+    color: orange;
+    border: 1px solid gray;
+}
+.coube2{
+    display: inline;
+    background-color: hsl(46, 80%, 71%);
+    border: 1px solid gray;
+}
+.coube3 {
+    display: inline;
+    background-color: hsl(46, 80%, 71%);
+    color: orange;
+}
+.comments {
+    color: gray;
+}
 /* .li1 {
     background-color: rgb(235, 235, 235);
 }

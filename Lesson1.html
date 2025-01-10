@@ -10,7 +10,15 @@
 </head>
 <body>
     <h1>Типы данных в JS</h1>
-    <a href="#Number"> Число</a>
+    <h2>Краткое содержание:</h2>
+    <ul>
+        <li>
+            <a href="#Number"> Число</a>
+        </li>
+        <li>
+            <a href="#String">Строка</a>
+        </li>
+    </ul>
     <img class="Types" src="type.jpg" alt="Типы данных">
     <section>
         <p>Значение в JavaScript всегда относится к данным определённого типа. Например, это может быть строка или число.</p>
@@ -25,28 +33,30 @@
                     
             <li>
                 <code>
-                    let message = "hello";
+                    <div class="let">let</div> message = <div class="text">"hello"</div>;
                 </code>
             </li>
             <li>
                 <code>
-                    message = 123456;
+                    message = <div class="log">12345</div>;
                 </code>
             </li>
         </ol>
         <p>Языки программирования, в которых такое возможно, называются «динамически типизированными». Это значит, что типы данных есть, но переменные не привязаны ни к одному из них.</p>
     </section>
     <section>
-        <h2 id="Number" >Число</h2>
+        <div class="header1">
+            <h2 id="Number" >Число</h2>
+        </div>
         <ol>
             <li>
                 <code>
-                    let n = 123;
+                    <div class="let">let</div> n = <div class="log">123</div>;
                 </code>
             </li>
             <li>
                 <code>
-                    n = 12.345;
+                    n = <div class="log">12.345</div>;
                 </code>
             </li>
         </ol>
@@ -64,7 +74,9 @@
         </ul>
         <p> Мы можем получить его в результате деления на ноль:</p>  
         <ol>
-            <li class="lifan"><code>alert( 1 / 0 ); // Infinity</code>
+            <li><code>
+                <div class="numbers">alert</div>( <div class="log">1</div> / <div class="log">0</div> ); // Infinity
+            </code>
             </li>
         </ol>
         <p>
@@ -73,7 +85,7 @@
         <ol>
             <li>
                 <code>
-                    alert( Infinity ); // Infinity
+                    <div class="numbers">alert</div>( <div class="log">Infinity</div> ); // Infinity
                 </code>
             </li>
         </ol>
@@ -86,7 +98,7 @@
         <ol>
             <li>
                 <code>
-                    alert( "не число" / 2 ); // NaN, такое деление является ошибкой
+                    <div class="numbers">alert</div>( "не число" / 2 ); // NaN, такое деление является ошибкой
                 </code>
             </li>
         </ol>
@@ -97,28 +109,28 @@
     <ol>
         <li>
             <code>
-                alert( NaN + 1 ); // NaN
+                <div class="numbers">alert</div>( <div class="log">NaN</div> + <div class="log">1</div> ); // NaN
             </code>
         </li>
         <li>
             <code>
-                alert( 3 * NaN ); // NaN
+                <div class="numbers">alert</div>( <div class="log">3</div> * <div class="log">NaN</div> ); // NaN
             </code>
         </li>
         <li>
             <code>
-                alert( "не число" / 2 - 1 ); // NaN
+                <div class="numbers">alert</div>( <div class="text">"не число"</div> / <div class="log">2</div> - <div class="log">1</div> ); // NaN
             </code>
         </li>
     </ol>
     <p>
         Если где-то в математическом выражении есть NaN, то оно распространяется на весь результат (есть только одно исключение: NaN ** 0 равно 1).
     </p>
-    <fieldset>
+    <div class="boxes">
         <h3><img 
-            src="icon.png" 
+            src="Info_Simple.svg.png" 
             alt="Иконка информации"
-            width="30"
+            width="15"
             height="15">
             Математическик операции - безопасны</h3>
             <p>
@@ -127,7 +139,7 @@
             <p>
                 Скрипт никогда не остановится с фатальной ошибкой (не «умрёт»). В худшем случае мы получим NaN как результат выполнения.            </p>
 
-    </fieldset>
+    </div>
 
     <p>
         Специальные числовые значения относятся к типу «число». Конечно, это не числа в привычном значении этого слова.
@@ -174,25 +186,179 @@
             </p>
         </fieldset>
     </form>
+    </section>
+    <section>
+        <div class="header2">
+            <h3>Biglnt</h2>
+        </div>
+        <p>В JavaScript тип number не может безопасно работать с числами, большими, чем (<span>2 <sup>53</sup>-1</span>) (т. е. 9007199254740991) или меньшими, чем -(<span>2 <sup>53</sup>-1</span>) для отрицательных чисел.</p>
+        <p>Если говорить совсем точно, то, технически, тип number может хранить большие целые числа (до <span>.7976931348623157 * 103081</span>), но за пределами безопасного диапазона целых чисел <span>±(253-1)</span> будет ошибка точности, так как не все цифры помещаются в фиксированную 64-битную память
+        . Поэтому можно хранить «приблизительное» значение.</p>
+        <p>Например, эти два числа (прямо за пределами безопасного диапазона) совпадают:</p>
+        <ol>
+            <li>
+                <code>console.<div class="log">log</div>(<div class="numbers">9007199254740991</div> + <div class="numbers">1</div>)); // 9007199254740992</code>
+            </li>
+            <li>
+                <code>console.<div class="log">log</div>(<div class="numbers">9007199254740991</div> + <div class="numbers">2</div>); // 9007199254740992  </code>
+            </li>
+        </ol>
+        <p>
+            В большинстве случаев безопасного диапазона чисел от <span>-(253-1)</span> до <span>(253-1)</span> вполне достаточно, но иногда нам требуется весь диапазон действительно гигантских целых чисел без каких-либо ограничений или пропущенных значений внутри него.
+             Например, в криптографии или при использовании метки времени («timestamp») с микросекундами.
+        </p>
+        <p>
+            Чтобы создать значение типа BigInt, необходимо добавить n в конец числового литерала:
+        </p>
+        <ol>
+            <li>
+                <code class="comments">// символ "n" в конце означает, что это BigInt
+                </code>
+            </li>
+            <li>
+                <div class="text">const</div> bigInt = <div class="numbers">1234567890123456789012345678901234567890n</div> ;
+            </li>
+        </ol>
+        <p>
+            Так как необходимость в использовании BigInt–чисел появляется достаточно редко, мы рассмотрим их в отдельной главе BigInt. Ознакомьтесь с ней, когда вам понадобятся настолько большие числа.
+        </p>
+        <div class="boxes">
+            <h3><img 
+                src="Info_Simple.svg.png" 
+                alt="Иконка информации"
+                width="15"
+                height="15">
+                Поддержка</h3>
+                <p>
+                    В данный момент BigInt поддерживается только в браузерах Firefox, Chrome, Edge и Safari, но не поддерживается в IE.
+                </p>
+        </div>
+    </section>
+    <section>
+        <div class="header1">
+            <h2 id="String">Строка</h2>
+        </div>
+        <p>
+            Строка (<span>string</span>) в JavaScript должна быть заключена в кавычки.
+        </p>
+        <ol>
+            <li>
+                <code>
+                    <div class="let">let</div> str = <div class="text">"Привет"</div>;
+                </code>
+            </li>
+            <li>
+                <code>
+                    <div class="let">let</div> str2 = <div class="text">'Одинарные кавычки тоже подойдут'</div> ;
+                </code>
+            </li>
+            <li>
+                <code>
+                    <div class="let">let</div> phrase = <div class="text">`Обратные кавычки позволяют встраивать переменные ${str}`</div> ;
+                </code>
+            </li>
+        </ol>
 
-    <h2>Biglnt</h2>
-    <p>В JavaScript тип number не может безопасно работать с числами, большими, чем (<span>2 <sup>53</sup>-1</span>) (т. е. 9007199254740991) или меньшими, чем -(<span>2 <sup>53</sup>-1</span>) для отрицательных чисел.</p>
+        <p>
+            В JavaScript существует три типа кавычек.
+        </p>
+        <ol class="none">
+            <li class="none">
+                Двойные кавычки: <span>"Привет"</span>.
+            </li>
+            <li class="none">
+                Одинарные кавычки: <span>'Привет'</span>.
+            </li>
+            <li class="none">
+                Обратные кавычки: <span>`Привет`</span>.
+            </li>
+        </ol>
+        <p>
+            Двойные или одинарные кавычки являются «простыми», между ними нет разницы в JavaScript.
+        </p>
+        <p>Обратные же кавычки имеют расширенную функциональность. Они позволяют нам встраивать выражения в строку, заключая их в ${…}.
+        </p>
+        <p>
+            Например:
+        </p>
+        <ol>
+            <li>
+                <code>
+                    <div class="let">let</div> name = <div class="text">"Иван"</div>;
+                </code>
+            </li>
+            <li>
+            </li>
+            <li>
+                <code class="comments">
+                    // Вставим переменную
+                </code>
+            </li>
+            <li>
+                <code>
+                    <div class="log">alert</div>( `Привет, <div class="coube">${</div><div class="coube2">name<div class="coube3">}</div></div> !` ); // Привет, Иван!
+                </code>
+            </li>
+            <li>                
+            </li>
+            <li>
+                <code class="comments">
+                    // Вставим выражение
+                </code>
+            </li>
+            <li>
+                <code>
+                    <div class="log">alert</div>( `результат: <div class="coube">${</div><div class="coube2"><div class="numbers">1</div> + <div class="numbers">2</div><div class="coube3">}</div></div>` ); // результат: 3
+                </code>
+            </li>
+        </ol>
+        <p>
+            Выражение внутри <span>${…}</span> вычисляется, и его результат становится частью строки.
+             Мы можем положить туда всё, что угодно: переменную name, или выражение <span>1 + 2</span>, или что-то более сложное.
+        </p>
+        <p>
+            Обратите внимание, что это можно делать только в обратных кавычках. Другие кавычки не имеют такой функциональности встраивания!
+        </p>
+        <ol>
+            <li>
+                <code>
+                    <div class="log">alert</div>( <div class="text"> "результат: ${1 + 2}"</div>);  <code class="comments">// результат: ${1 + 2} (двойные кавычки ничего не делают)</code>
+                </code>
+            </li>
+        </ol>
 
+        <div class="boxes">
+            <h3><img 
+                src="Info_Simple.svg.png" 
+                alt="Иконка информации"
+                width="15"
+                height="15">
+                Нет отдельного типа данных для одного символа.</h3>
+                <p>
+                    В некоторых языках, например C и Java, для хранения одного символа, например <span>"a"</span> или <span>"%"</span>, существует отдельный тип. 
+                    В языках C и Java это <span>char</span>.               
+                </p>
+                <p>
+                    В JavaScript подобного типа нет, есть только тип <span>string</span>. Строка может содержать ноль символов (быть пустой), один символ или множество.
+                </p>
+        </div>
     </section>
     
     
+    
     <footer>
+        <div class="box"></div>
         <div class=foot>
-            <ul>
-                <li>
+            <h2 style="text-align: center;">Information</h2>
+                <p>
                     Полезные ссылки <a href="https://learn.javascript.ru/function-basics"> Функции</a>
-                </li>
-                <li>
+                </p>
+                <p>
                     Электронная почта для связи <a href="mailto:haha@mail.com">haha@mail.com</a>
-                </li>
-                <li>
+                </p>
+                <p>
                     Телефон для связи <a href="tel:+7999999999"> +7(999) 999-99-99</a>
-                </li>
+                </p>
         </div>
     </footer>
 </body>
