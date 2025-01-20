@@ -1,0 +1,41 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+.custom-font {
+    font-family: 'Roboto';
+}
+.bold {
+    font-weight: 700;
+/* } Вариант с подключением шрифта через url адрес шрифта на гугл */  
+
+
+
+
+
+/* @font-face {
+    font-family: 'Roboto';
+    src: url("./Roboto-Italic.woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+.custom-font {
+    font-family: 'Roboto';
+}   Вариант подключения напрямую через скачанный шрифт */
+
+
+
+body {
+    font: 700 italic normal normal 16px/1.5;
+}
+
+
+/* Если указывать по отдельности:
+ font-weight: 700 (задает начертание шрифта его жирность от 100 до 900 чем больше тем жирнее средний вариант 400 
+ font-style: italic
+ font-stretch: normal
+ font-variant: normal
+ font-size: 16px (задает размер текста по умолчанию 16рх
+ line-height: 1.5 (задает межстрочный интервал (лучше писать в коэффициенте формула line-height делим на font-size и округляем до 2 знаков после запятой, если указаны проценты то делим на сто и округляем до 2 знаков))
+ font-family: Arial, sans-serif  (использует первый вариант шрифта если недоступен то следующий 
+ */

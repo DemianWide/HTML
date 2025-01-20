@@ -1,0 +1,12 @@
+.box {
+    background-color: greenyellow;
+    height: 100px;
+    position: static;
+}
+
+.inner {
+    background-color: violet;
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+}

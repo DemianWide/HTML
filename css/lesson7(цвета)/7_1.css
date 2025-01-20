@@ -1,0 +1,46 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+
+    color: red;
+}
+
+.magenta-color {
+    color: magenta;
+}
+
+.rgb {
+    color: rgba(255, 0, 0, 0.753); /* последнее значение это прозрачность */
+    /* color: rgba(255, 0, 0, 0.75)   разница в том что не нужно ставить слэш, только запятую */
+}
+
+.red-color {
+    color: hsl(0 100% 50% /0.75); 
+}
+
+.green-color {
+    color: hsl(120 100% 50%);
+}
+
+.blue-color {
+    color: hsl(240 100% 50%);
+}
+
+.none {
+    color: rgb(0, 0, 0);
+}
+
+.transparent-color {
+    color: transparent;
+}
+
+.current-color-border {
+    color: orange;
+    border: 2px solid currentColor;
+}
+
+.button {
+    color: tomato;
+}
+
+svg * {fill: currentColor;}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Собственный сброс стилей</title>
+    <link rel="stylesheet" href="nullversioncss.css">
+</head>
+<body>
+    <a href="#city">Перейти к выбору города</a>
+    <figure class="my-figure">
+        <img src="https://steamuserimages-a.akamaihd.net/ugc/5103172932219996638/4FE828816AAF7B0660DD1BD7C94EBD54C68EF692/?imw=512&amp;&amp;ima=fit&amp;impolicy=Letterbox&amp;imcolor=%23000000&amp;letterbox=false" width="100" height="100" alt="">
+    </figure>
+
+    <blockquote class="my-blockquote">
+        Lorem ipsum dolor sit.
+    </blockquote>
+
+    <dl class="my-dl">
+        <dt class="my-dt">HTML</dt>
+        <dd class="my-dd">Язык гипертекстовой разметки</dd>
+        <dt class="my-dt">CSS</dt>
+        <dd class="my-dd">Каскадные таблицы стилей</dd>
+        <dd class="my-dd">Язык для оформления HTML-документа</dd>
+    </dl>
+
+    <h1 class="my-title">Заголовок первого уровня</h1>
+    <h2 class="my-title">Второго</h2>
+    <h3 class="my-title">третьего</h3>
+    <h4 class="my-title">четвертого</h4>
+    <h5 class="my-title">пятого</h5>
+    <h6 class="my-title">шестого</h6>
+
+    <ul class="my-list">
+        <li class="my-list-item">
+            Элемент неупорядоченного списка
+        </li>
+    </ul>
+
+    <ol class="my-list">
+        <li class="my-list-item">Элемент упорядоченного списка</li>
+    </ol>
+    <p class="my-paragraph">Параграф</p>
+
+    <fieldset class="my-fieldset">
+        <legend>Общая информация</legend>
+        <p>
+
+            <label for="username">Имя:</label>
+            <input id="username" name="username" placeholder="Введите ваше имя">    
+        </p>
+        <p>
+            <label for="city">Город</label>
+            <select id="city">
+                <option disabled value="" selected>Не выбрано</option>
+                <option value="msc">Москва</option>
+                <option value="spb">Санкт-Петербург</option>
+                <option value="ekb">Екатеринбург</option>
+            </select>
+            </p>
+            <p>
+                <button type="submit">Отправить</button>
+            </p>
+    </fieldset>
+</body>
+</html>

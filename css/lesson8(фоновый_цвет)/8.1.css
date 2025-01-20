@@ -1,0 +1,16 @@
+.box {
+    width: 600px;
+    height: 600px;
+    background-color: lightskyblue;
+
+    background-image: 
+    url(https://i.pinimg.com/736x/a4/11/af/a411af5e28c6450b500f03d78a4d16e3.jpg);
+    /* url(https://i.pinimg.com/736x/80/06/b1/8006b1f3f97d3cbceec3bf04fad10cd9.jpg),
+    url(https://i.pinimg.com/736x/27/83/80/278380df13717eff450728619c185fd5.jpg); */
+    /* background-repeat: round; повторение фоток 
+    background-position: center; позиция в определенном квадрате */
+    /* background-size: cover ; ширина ; */
+   background-repeat: no-repeat;
+   background-size: 200px;
+   background-position: center;
+}

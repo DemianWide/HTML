@@ -1,0 +1,21 @@
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: chocolate;
+    border-inline: 20px solid blue;
+    border-top: 10px solid red;
+    border-width: 10px;
+    border-style: outset;
+    box-sizing: border-box;
+    outline: 5px solid blueviolet;
+    outline-offset: -25px;
+    margin-bottom: 50px;
+}
+
+.box2 {
+    width: 100px;
+    height: 100px;
+    background-color: rgb(76, 145, 139);
+    border-radius: 0 20px;
+    box-shadow: -5px 10px 5px -5px;
+}

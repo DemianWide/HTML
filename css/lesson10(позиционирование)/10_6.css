@@ -1,0 +1,12 @@
+.box {
+    width: 200px;
+    height: 200px;
+    background-color: lightseagreen;
+    position: relative;
+}
+
+.inner {
+    background-color: rgb(197, 98, 52);
+    position: absolute;
+    /* inset: 0;  шорткат к свойствам top right bottom left*/
+}

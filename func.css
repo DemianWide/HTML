@@ -1,6 +1,17 @@
 h1 {
     text-align: center;
 }
+
+.banner {
+    background-image: 
+    url(type.jpg);
+    height: 600px;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    background-attachment: fixed;
+}
+
 .header1{
     text-align: center;
     background-color: rgb(205, 243, 170);
