@@ -1,0 +1,27 @@
+.flex-container {
+    gap: 10px;
+    padding: 10px;
+    background-color: lightskyblue;
+    display: flex;
+}
+
+.flex-element {
+    width: 300px;
+    height: 100px;
+    padding: 10px;
+    background-color: lightgreen;
+}
+
+.order-last {
+    order: 1;
+    background-color: tomato;
+}
+.order-first {
+    background-color: blueviolet;
+    order: -1;
+}
+
+.order-1 {order: 1;}
+.order-2 {order: 2;}
+.order-3 {order: 3;}
+.order-4 {order: 4;}

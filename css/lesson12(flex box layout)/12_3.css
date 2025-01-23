@@ -1,0 +1,22 @@
+.flex-container {
+    background-color: lightskyblue;
+    padding: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.flex-element {
+    background-color: lightgreen;
+    height: 100px;
+    width: 100px;
+    padding: 10px;
+    flex-wrap: nowrap;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.flex-wrap-reverse {
+    flex-wrap: wrap-reverse;
+}

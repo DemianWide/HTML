@@ -1,0 +1,15 @@
+.flex-container {
+    background-color: lightskyblue;
+    padding: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.flex-element {
+    background-color: lightgreen;
+    height: 200px;
+    width: 300px;
+    flex: 0 1 auto;
+    /* flex: тут идут по порядку flex-grow-0 запрещает автомат растягивание flex-shrink-1 сжатие по необходимости flex-basis-auto использовать размеры width и height 
+        зачастую используют комбинацию 0 0 50% не дает растягиваться сжиматься и использует 50% от размеров*/
+}

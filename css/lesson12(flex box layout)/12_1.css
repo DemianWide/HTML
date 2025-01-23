@@ -1,0 +1,19 @@
+.flex-container,
+.inline-flex-container {
+    background-color: lightskyblue;
+    padding: 10px;
+    gap: 10px;
+}
+
+.flex-container {
+    display: flex;
+}
+
+.inline-flex-container{
+    display: inline-flex;
+}
+
+.flex-element {
+    background-color: lightgreen;
+    padding: 10px;
+}

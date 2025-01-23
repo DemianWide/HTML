@@ -1,3 +1,86 @@
+.nav-bar {
+    display: flex;
+
+    border-bottom: 2px solid rgb(197, 197, 197);
+    /* background-color: lightskyblue; */
+    gap: 10px;
+    align-items: center;
+    
+}
+
+.nav-element-lang {
+    color: rgb(129, 125, 125);
+    padding: 10px;
+    text-align: center;
+    border-right: 1px solid rgb(224, 221, 221);
+}
+
+.nav-bar-2 {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 400px;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    column-count: 2;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.panel-left { 
+    width: 20%;
+    height: 100vh;
+    background-color: rgb(240, 239, 239);
+    color: rgb(129, 125, 125);
+    border-right: 1px solid rgb(224, 221, 221);
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    
+
+
+}
+
+.nav-element {
+    padding-bottom: 20px;
+}
+
+.icon {
+    width: 5%;
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+.icon-1 {
+    padding-top: 20px;
+    padding-bottom: 50px;
+}
+
+.basic {
+    width: 75%;
+}
+
+
+a {
+    color: gray;
+    text-decoration: none;
+}
+
+.none {
+    background-color: white;
+}
+
+.nav-icon{
+    padding-right: 10px;
+    justify-content: center;
+}
+
 h1 {
     text-align: center;
 }
@@ -6,7 +89,7 @@ h1 {
     background-image: 
     url(type.jpg);
     height: 600px;
-    background-position: center;
+    background-position: right;
     background-repeat: no-repeat;
     width: 100%;
     background-attachment: fixed;

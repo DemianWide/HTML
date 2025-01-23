@@ -1,0 +1,22 @@
+.flex-container {
+    background-color: lightskyblue;
+    padding: 10px;
+    height: auto;
+    gap: 10px;
+    display: flex;
+}
+
+.flex-element {
+    background-color: lightgreen;
+    padding: 10px;
+    height: 100px;
+    width: 100px;
+}
+
+.flex-first {
+    flex-flow: column wrap;
+}
+
+.flex-second {
+    flex-flow: row wrap-reverse;
+}
