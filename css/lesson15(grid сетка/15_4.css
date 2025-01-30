@@ -1,0 +1,32 @@
+.content {
+    min-height: 50vh;
+    display: grid;
+    grid-template-columns: 30% auto 15%;
+    grid-template-areas: 
+    "menu catalog advertisement"
+    "menu catalog advertisement"
+    "menu catalog ."
+    "menu order order"
+    ;
+    gap: 30px;
+}
+
+.menu {
+    grid-area: menu;
+    background-color: lightskyblue;
+}
+
+.catalog {
+    grid-area: catalog ;
+    background-color: lightgreen;
+}
+
+.advertisement {
+    grid-area: advertisement; 
+    background-color: palevioletred;
+}
+
+.order {
+    grid-area: order;
+    background-color: blueviolet;
+}

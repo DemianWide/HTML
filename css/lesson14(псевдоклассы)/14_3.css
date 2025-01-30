@@ -1,0 +1,23 @@
+button {
+    background-color: rgb(238, 217, 217);
+    border-radius: 10px;
+    font-size: 20px;
+    
+}
+
+.hover-effect:hover {
+    background-color: rgb(136, 115, 119);
+}
+
+.focus-effect:focus {
+    box-shadow: 0 0 10px 10px rgb(255 0 0 /0.5);
+}
+
+.focus-visible-effect:focus-visible {
+    box-shadow: 0 0 10px 10px rgb(255 0 0 /0.5);
+}
+
+.active-effect:active {
+    color: indigo;
+    background-color: yellow;
+}

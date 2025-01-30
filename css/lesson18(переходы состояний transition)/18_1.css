@@ -1,0 +1,35 @@
+.box-1,
+.box-2 {
+    width: 100px;
+    height: 100px;
+    background-color: lightskyblue;
+    border: 5px solid coral;
+    box-shadow: 4px -2px 12px  4px rgb(0 0 0 / 0.5);
+}
+
+.box-2 {transform: scale(-1.5, 0.8);}
+
+
+.box-1 {
+    transform: rotate(0.75turn);
+    /* есть отдельные css свойства
+    translate (смещение по оси перечисляются первое значение по оси Х и второе по У  
+    scale (аналогично как и translate, но тут указывается коэффициент масштабирования 
+    rotate (указывается одно значение deg turn reg поворот )*/
+    }
+
+
+.box-3 {
+    width: 100px;
+    height: 100px;
+    background-color: lightskyblue;
+    border: 5px solid indianred;
+}
+
+.inner {
+    width: 75px;
+    height: 75px;
+    background-color: palegreen;
+    rotate: 30deg;
+    transform-origin: 0 0;
+}

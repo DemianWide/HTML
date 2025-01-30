@@ -1,0 +1,10 @@
+div {
+    width: 00px;
+    transition-property: width;
+    background-color: aqua;
+    transition: all 1;
+    
+    }
+div:hover {
+    width: 300px;
+    }

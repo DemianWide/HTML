@@ -1,0 +1,12 @@
+li:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.tooltip:not(.is-active) {
+    display: none;
+}
+
+
+/* .tooltip is-active {
+    display: block;
+} */

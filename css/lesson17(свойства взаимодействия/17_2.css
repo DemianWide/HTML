@@ -1,0 +1,15 @@
+.box1 {
+    user-select: none;
+}
+
+button {
+    user-select: none;
+}
+
+
+.box2 {
+    padding: 10px;
+    background-color: lightskyblue;
+    pointer-events: auto;
+}
+

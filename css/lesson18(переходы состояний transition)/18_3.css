@@ -1,0 +1,40 @@
+.box {
+ /* border: 2px solid; */
+ margin-bottom: 10px; 
+ height: 40px; 
+ align-items: center;
+ display: block;
+}
+
+.inner {
+    width: 0px;
+    height: 100%;
+    background-color: lightskyblue;
+    transition: 1s ease;
+    border: 2px solid;
+}
+
+
+body:hover .inner {
+    width: 100%;
+}
+
+.ease-in {
+    transition-timing-function: ease-in ;
+}
+
+.ease-out {
+    transition-timing-function: ease-out;
+}
+
+.ease-in-out {
+    transition-timing-function: ease-in-out;
+}
+
+.linear { 
+    transition-timing-function: linear;
+}
+
+.cubic-baizer {
+    transition-timing-function: cubic-bezier(0.250, 0.250, 0.790, 0.155); /* custom */
+}

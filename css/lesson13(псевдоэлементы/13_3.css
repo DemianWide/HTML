@@ -1,0 +1,17 @@
+.special-first-latter::first-letter {  /* первая буква в строке для ее стилизации */
+    margin-right: 15px;
+    padding: 12px 24px;
+    font-size: 3em;
+    color: indianred;
+    background-color: skyblue;
+    border: 3px solid cadetblue;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgb(0 0 0 / 0.75);
+}
+
+.special-first-line::first-line {   /* первая строка  для стилизации   */
+    text-transform: uppercase;
+    color: indianred;
+    background-color: skyblue;
+    box-shadow: 0 0 10px 0 ;
+}

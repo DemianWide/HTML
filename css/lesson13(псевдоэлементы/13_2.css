@@ -1,0 +1,8 @@
+.with-custom-file-button::file-selector-button {
+    height: 32px;
+    padding-inline: 12px;
+    color: #418dff;
+    background-color: rgb(238, 215, 186);
+    border: 3px dotted forestgreen;
+    border-radius: 10px;
+}

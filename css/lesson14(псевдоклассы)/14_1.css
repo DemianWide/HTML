@@ -1,0 +1,19 @@
+p:last-child {
+    color: aqua;
+}
+
+p:nth-child(odd) {
+    color: blue;
+}
+
+p:first-child {
+    color: red;
+}
+
+p:nth-child(2n + 4) {
+    color: yellowgreen;
+}
+
+li:only-child {
+    color: red;
+}

@@ -1,11 +1,18 @@
 .nav-bar {
     display: flex;
-
     border-bottom: 2px solid rgb(197, 197, 197);
     /* background-color: lightskyblue; */
     gap: 10px;
     align-items: center;
-    
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.nav-name {
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+    width: 60%;
 }
 
 .nav-element-lang {
@@ -13,13 +20,18 @@
     padding: 10px;
     text-align: center;
     border-right: 1px solid rgb(224, 221, 221);
+    width: 4%;
+}
+
+.nav-JS {
+    width: 18%;
 }
 
 .nav-bar-2 {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    width: 400px;
+    width: 20%;
 }
 
 .flex-container {
@@ -47,7 +59,11 @@
 }
 
 .nav-element {
-    padding-bottom: 20px;
+    margin-right: 10px;   
+}
+
+.nav-element2 {
+    margin-bottom: 20px;
 }
 
 .icon {
@@ -62,8 +78,25 @@
     padding-bottom: 50px;
 }
 
+.pseudo-p::before {
+    content: "👉";
+}
+
+.pseudo-p::after {
+    content: "👈";
+}
+
 .basic {
     width: 75%;
+}
+
+button {
+    background-color: rgb(238, 217, 217);
+    border-radius: 10px;
+}
+
+.hover-effect:hover {
+    background-color: rgb(136, 115, 119);
 }
 
 
@@ -89,7 +122,7 @@ h1 {
     background-image: 
     url(type.jpg);
     height: 600px;
-    background-position: right;
+    background-position: center;
     background-repeat: no-repeat;
     width: 100%;
     background-attachment: fixed;

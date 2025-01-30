@@ -1,0 +1,15 @@
+.custom-select::selection {
+    color: whitesmoke;
+    background-color: coral;
+    text-shadow: 2px 2px 2px black;
+    text-decoration: underline;
+}
+
+
+.red-marker::marker {
+    color: red;
+}
+
+.smile-marker::marker {
+    content: "🍪";
+}
