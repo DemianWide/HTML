@@ -1,0 +1,14 @@
+button {
+    background-color: palegreen;
+}
+
+button:hover {
+    background-color: brown;
+}
+
+
+@media (hover:hover) {
+    button:hover {
+        background-color: crimson;
+    }
+}

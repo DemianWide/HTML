@@ -1,0 +1,22 @@
+.box {
+    grid-column-gap: 30px; /* устаревшее */
+    column-gap: 30px; /* актуальное */
+
+    grid-row-gap: 30px; /* устаревшее */
+    row-gap: 30px; /* актуальное */
+
+    offset-block-end: 5px; /* устаревшее */
+    inset-block-end: 5px; /* актуальное */
+
+    offset-block-start: 5px; /* устаревшее */
+    inset-block-start: 5ox; /* актуальное */
+
+    offset-inline-start: 5px; /* устаревшее */
+    inset-inline-start: 5px; /* актуальное */
+
+    offset-inline-end: 5px; /* устаревшее */
+    inset-inline-end: 5px; /* актуальное */
+
+    ime-mode: active; /* устаревшее */
+}
+

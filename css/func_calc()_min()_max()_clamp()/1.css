@@ -1,0 +1,18 @@
+.box {
+    /*  Корректные формулы в calc  */
+    width: calc(10px + 20px);
+    height: calc(5% + 3% - 1%);
+    margin: calc(10px * 3);
+    padding: calc(30vw / 5);
+    font-size: calc(16px + (36-16) * ((100vw - 360px) / (1920-360)));
+    line-height: calc(1.5 / 0.85);
+    transition-duration: calc(1s * 3);
+    rotate: calc(360deg / 4);
+    translate: calc(100vw / (3 * 2));
+    opacity: calc(1 - 0.3);
+    z-index: calc(10 + 1);
+
+    /* Некорректные формулы в calc */
+    max-width: calc(75% * 100px);
+    max-height: calc(100vh / 30px);
+}

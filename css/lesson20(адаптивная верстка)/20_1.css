@@ -1,0 +1,21 @@
+.box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 48px;
+    background-color: tomato;
+    height: 100px;
+    width: 50%;
+    min-width: 200px;
+    max-width: 500px;
+}
+
+
+.banner {
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: salmon;
+    min-height: 100vh;  /* если поставить просто высоту heghtt то верстка поломается, а с минимальным значением min-height верстка будет адаптирована под контент */
+}

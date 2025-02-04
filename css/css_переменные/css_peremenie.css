@@ -1,0 +1,17 @@
+*{
+    font-size: 50px;
+}
+
+body {
+    --color-main: #20855e;
+    --color-accent: #ffc67c;
+    --border-radiusius: 10px
+}
+
+button {
+    border: 6px solid black;
+    color: var(--color-main);
+    background-color: var(--color-accent);
+    border-radius: var(--border-radiusius);
+    box-shadow: var(--underfined-variable, 4px 4px 4px green);
+}
