@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kropp Fitness</title>
+    <style>
+        @font-face {
+    font-family: 'Heebo';
+    src: url(fonts/Heebo-Light.woff2) format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Heebo';
+    src: url(fonts/Heebo-Bold.woff2) format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Yantramanav';
+    src: url(fonts/Yantramanav-Bold.woff2) format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/**
+  Нормализация блочной модели
+ */
+ *,
+ ::before,
+ ::after {
+   box-sizing: border-box;
+ }
+ 
+ /**
+   Убираем внутренние отступы слева тегам списков,
+   у которых есть атрибут class
+  */
+ :where(ul, ol):where([class]) {
+   padding-left: 0;
+ }
+ 
+ /**
+   Убираем внешние отступы body и двум другим тегам,
+   у которых есть атрибут class
+  */
+ body,
+ :where(blockquote, figure):where([class]) {
+   margin: 0;
+ }
+ 
+ /**
+   Убираем внешние отступы вертикали нужным тегам,
+   у которых есть атрибут class
+  */
+ :where(
+   h1,
+   h2,
+   h3,
+   h4,
+   h5,
+   h6,
+   p,
+   ul,
+   ol,
+   dl
+ ):where([class]) {
+   margin-block: 0;
+ }
+ 
+ :where(dd[class]) {
+   margin-left: 0;
+ }
+ 
+ :where(fieldset[class]) {
+   margin-left: 0;
+   padding: 0;
+   border: none;
+ }
+ 
+ /**
+   Убираем стандартный маркер маркированному списку,
+   у которого есть атрибут class
+  */
+ :where(ul[class]) {
+   list-style: none;
+ }
+ 
+ :where(address[class]) {
+   font-style: normal;
+ }
+ 
+ /**
+   Обнуляем вертикальные внешние отступы параграфа,
+   объявляем локальную переменную для внешнего отступа вниз,
+   чтобы избежать взаимодействие с более сложным селектором
+  */
+ p {
+   --paragraphMarginBottom: 24px;
+ 
+   margin-block: 0;
+ }
+ 
+ /**
+   Внешний отступ вниз для параграфа без атрибута class,
+   который расположен не последним среди своих соседних элементов
+  */
+ p:where(:not([class]):not(:last-child)) {
+   margin-bottom: var(--paragraphMarginBottom);
+ }
+ 
+ 
+ /**
+   Упрощаем работу с изображениями и видео
+  */
+ img,
+ video {
+   display: block;
+   max-width: 100%;
+   height: auto;
+ }
+ 
+ /**
+   Наследуем свойства шрифт для полей ввода
+  */
+ input,
+ textarea,
+ select,
+ button {
+   font: inherit;
+ }
+ 
+ html {
+   /**
+     Пригодится в большинстве ситуаций
+     (когда, например, нужно будет "прижать" футер к низу сайта)
+    */
+   height: 100%;
+   /**
+     Убираем скачок интерфейса по горизонтали
+     при появлении / исчезновении скроллбара
+    */
+   scrollbar-gutter: stable;
+ }
+ 
+ /**
+   Плавный скролл
+  */
+ html,
+ :has(:target) {
+   scroll-behavior: smooth;
+ }
+ 
+ body {
+   /**
+     Пригодится в большинстве ситуаций
+     (когда, например, нужно будет "прижать" футер к низу сайта)
+    */
+   min-height: 100%;
+   /**
+     Унифицированный интерлиньяж
+    */
+   line-height: 1.5;
+ }
+ 
+ /**
+   Нормализация высоты элемента ссылки при его инспектировании в DevTools
+  */
+ a:where([class]) {
+   display: inline-flex;
+ }
+ 
+ /**
+   Курсор-рука при наведении на элемент
+  */
+ button,
+ label {
+   cursor: pointer;
+ }
+ 
+ /**
+   Приводим к единому цвету svg-элементы
+   (за исключением тех, у которых уже указан
+   атрибут fill со значением 'none' или начинается с 'url')
+  */
+ :where([fill]:not(
+   [fill="none"],
+   [fill^="url"]
+ )) {
+   fill: currentColor;
+ }
+ 
+ /**
+   Приводим к единому цвету svg-элементы
+   (за исключением тех, у которых уже указан
+   атрибут stroke со значением 'none')
+  */
+ :where([stroke]:not(
+   [stroke="none"],
+   [stroke^="url"]
+ )) {
+   stroke: currentColor;
+ }
+ 
+ /**
+   Чиним баг задержки смены цвета при взаимодействии с svg-элементами
+  */
+ svg * {
+   transition-property: fill, stroke;
+ }
+ 
+ /**
+   Приведение рамок таблиц в классический 'collapse' вид
+  */
+ :where(table) {
+   border-collapse: collapse;
+   border-color: currentColor;
+ }
+ 
+ /**
+   Удаляем все анимации и переходы для людей,
+   которые предпочитают их не использовать
+  */
+ @media (prefers-reduced-motion: reduce) {
+   *,
+   ::before,
+   ::after {
+     animation-duration: 0.01ms !important;
+     animation-iteration-count: 1 !important;
+     transition-duration: 0.01ms !important;
+     scroll-behavior: auto !important;
+   }
+ }
+
+
+ :root {
+    --color-dark: #000000;
+    --color-light: #FFFFFF;
+    --color-dark-alternate: #131619;
+    --color-dark-gray: #404040;
+    --color-light-gray: #C4C4C4;
+    
+    --border-radius: 30px;
+    --border: 1px solid var(--color-light);
+    
+    --font-family-base: 'Heebo', sans-serif;
+    --font-family-accent: 'Yantamanav', sans-serif;
+
+    --input-height: 54px;
+
+    --container-width: 1300px;
+    --container-padding-x: 15px;
+
+    --transition-duration: 0.2s;
+
+    --header-hight: 90px
+}
+
+a,
+button,
+input,
+textarea,
+svg * {
+    transition-duration: var(--transition-duration);
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-light);
+}
+
+a:hover {
+  color: var(--color-light-gray);
+}
+
+h1,h2,h3,h4,h5,h6 {
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--color-light);
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  border: 0 !important;
+  padding: 0 !important;
+  white-space: nowrap !important;
+  clip-path: inset(100%) !important;
+  clip: rect(0 0 0 0) !important;
+  overflow: hidden !important;
+}
+
+body {
+  font-family: var(--font-family-base);
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--color-light-gray);
+  background-color: var(--color-dark);
+}
+
+.backdrop-title {
+  display: block;
+  position: relative;
+}
+
+.backdrop-title::before {
+  content: '';
+  display: block;
+  position: absolute;
+  right: calc(100% + 3px);
+  width: 26px;
+  aspect-ratio: 1;
+  background: url('/копия_сайта_HTMLCSS/icons/krest.svg') center/contain no-repeat ;
+}
+
+.backdrop-title::after{
+  position: absolute;
+  /* z-index: -1; */
+  top: -0.45em;
+  left: -0.6em;
+  font-family: var(--font-family-accent);
+  content: attr(data-title);
+  font-size: 2.8em;
+  color: transparent;
+  opacity: 25%;
+  -webkit-text-stroke: 1px var(--color-light-gray);
+}
+
+.body-title2.backdrop-title::after{
+  position: absolute;
+  /* z-index: -1; */
+  top: -0.45em;
+  font-family: var(--font-family-accent);
+  content: attr(data-title);
+  left: 40px;
+  font-size: 2em;
+  color: transparent;
+  opacity: 40%;
+  -webkit-text-stroke: 1px var(--color-light-gray);
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  height: 38px;
+  padding-inline: 26px;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 24px;
+  flex-wrap: wrap;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  border: none;
+  border-radius: var(--border-radius);
+}
+
+.button:hover {
+  background-color: var(--color-light-gray);
+}
+
+.motivation-button:hover {
+  color: var(--color-dark);
+  background-color: var(--color-light);
+}
+
+
+.header{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-inline: 32px;
+  background-color: var(--color-dark-alternate);
+
+
+}
+
+.header-list{
+  display: flex;
+  height: 90px;
+  align-items: center;
+  column-gap: 50px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  
+}
+
+
+.header-link {
+  display: inline-flex;
+  align-items: center;
+}
+
+.header-link.is-current::after {
+  content: '';
+  width: 5px;
+  height: 5px;
+  margin-left: 7px;
+  background-color: currentColor;
+  border-radius: var(--border-radius);
+}
+
+.header-activity {
+  display: flex;
+  column-gap: 39px;
+}
+
+.header-burger-button {
+ display: inline-flex;
+ justify-content: center;
+ flex-direction: column;
+ row-gap: 4px;
+ padding-left: 8px;
+ width: 40px;
+ height: 40px;
+ color: var(--color-light);
+ background-color: transparent;
+ border: var(--border);
+ border-radius: var(--border-radius);
+}
+
+.header-burger-button-line {
+  display: flex;
+  width: 5px;
+  height: 1px;
+  background-color: currentColor;
+  box-shadow: 16px 0 0 currentColor;
+}
+
+.header-burger-button:hover {
+  color: var(--color-light-gray);
+  border-color: currentColor;
+}
+
+/* .backdrop-title {
+  
+} */
+
+.banner {
+  display: flex;
+  padding-inline: 20px;
+  flex-direction: column;
+  justify-content: end;
+  min-height: calc(100vh - var(--header-hight));
+  background-color: var(--color-dark-alternate);
+
+}
+
+.banner-info {
+  display: flex;
+  align-items: end;
+  color: var(--color-light);
+  font-size: clamp(16px, 1.56vw, 30px);
+  line-height: 1.27;
+  text-transform: uppercase;
+}
+
+.banner-info::before {
+  content: '';
+  width: clamp(60px ,10.1vw, 194px);
+  aspect-ratio: 1;
+  margin-right: 20px;
+  margin-bottom: 3px;
+  background: url('/копия_сайта_HTMLCSS/icons/bold-right.svg') center/contain no-repeat;
+}
+
+.banner-title {
+  font-size: min(18.75vw, 360px);
+  line-height: 1;
+}
+
+.banner-pagination-list {
+  display: flex;
+  justify-content: center;
+  column-gap: 14px;
+  padding-bottom: 32px;
+}
+
+.banner-pagination-button {
+  width: 10px;
+  height: 15px;
+  background-color: transparent;
+  border: none;
+}
+
+.banner-pagination-button::after {
+  content: '';
+  display: flex;
+  width: 10px;
+  aspect-ratio: 1;
+  border: var(--border);
+  border-radius: var(--border-radius);
+}
+
+.banner-pagination-button.is-current::after {
+  background-color: white;
+}
+
+.banner-pagination-button:not(.is-current):hover::after{
+  border-color: var(--color-light-gray);
+  transition-duration: var(--transition-duration);
+}
+
+.motivation-body {
+  min-height: 610px;
+}
+
+
+.motivation-card {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  column-gap: clamp(30px, 10.42vw, 200px);
+}
+
+
+.motivation-title:not(:last-child) {
+  margin-bottom: 17px;
+}
+
+.motivation-description:not(:last-child) {
+  margin-bottom: 37px;
+}
+
+.motivation-info {
+  padding-top: 100px;
+  padding-left: 35px;
+}
+
+.motivation-image {
+  margin-block: -60px;
+}
+
+.motivation-button {
+  position: relative;
+  color: var(--color-light);
+  height: var(--input-height);
+  padding-left: 31px;
+  padding-right: 81px;
+  background-color: transparent;
+  border: var(--border);
+}
+.motivation-button::after{
+    content: '';
+    position: absolute;
+    height: 100%;
+    aspect-ratio: 1;
+    right: 0;
+    background: url('/копия_сайта_HTMLCSS/icons/arrow-top-right.svg') center/70% no-repeat;
+    border: var(--border);    
+    border-radius: var(--border-radius);
+}
+
+.motivation-body:nth-child(even){
+  background-color: var(--color-dark-alternate);
+}
+
+.motivation-body:nth-child(even) .motivation-card {
+  flex-direction: row-reverse;
+}
+
+.Training {
+  position: relative;
+  min-height: 304px;
+  max-width: 1920px;
+  margin-inline: auto;
+  padding-top: 162px;
+  padding-bottom: 120px;
+  padding-inline: 90px;
+  background-color: var(--color-dark);
+}
+
+.training-types {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  align-items: center;
+  gap: 60px;
+  flex-shrink: 0;
+}
+
+
+.fit-item{
+  display: grid;
+  align-items: end;
+  align-self: stretch;
+  row-gap: 30px;
+  flex-direction: row;
+}
+
+.fit-item::after {
+  content: '';
+  position: relative;
+  width: 80px;
+  aspect-ratio: 1;
+  top: -320px;
+  left: 100px;
+  background: url('/копия_сайта_HTMLCSS/icons/training-types/Vector.svg') center/contain no-repeat;
+}
+
+.training-title {
+  display:flex;
+  justify-content: center;
+}
+
+.authorization {
+  display: flex;
+  background-color: var(--color-dark-alternate);
+}
+
+.auto-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.body-title {
+  font-size: 120px;
+  margin-top: -100px;
+}
+
+.body-title2 {
+  font-size: 50px;
+}
+
+.text-description {
+  text-transform: uppercase;
+}
+
+.body-title2:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.text-description:not(:last-child) {
+  margin-bottom: 60px;
+}
+
+.button-auto {
+  display: flex;
+  column-gap: 20px;
+  padding-bottom: 150px;
+}
+
+.body-button-name {
+  display: flex;
+  text-transform: none;
+  height: 54px;
+  width: 300px;
+  background-color: transparent;
+  border: 1px solid  var(--color-dark-gray) ;
+  color: var(--color-light-gray);
+
+}
+
+@media (max-width: 1910px) {
+  .motivation-card-image {
+    margin-block: -20px ;
+  }
+}
+
+@media (max-width:1200px) {
+  .motivation-card {
+    padding-block: 50px ;
+  }
+}
+
+@media (max-width:1024px) {
+  .header {
+    flex-wrap: wrap;
+    padding-inline: 12px;
+    padding-top: 10px;
+  }
+  .header-nav {
+    order: 1;
+    flex-basis: 100%;
+  }
+  .header-list {
+    height: 50px;
+  }
+
+  
+  .motivation-image{
+    max-width: 60%;
+  }
+  .training-types{
+    grid-template-columns: repeat(3, 2fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .header-logo {
+    max-width: 100px
+  }
+  .header-list {
+    column-gap: 25px;
+    flex-wrap: wrap;
+  }
+  .training-types{
+    grid-template-columns: repeat(2, 3fr);
+  }
+}
+
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="/" class="header-logo">
+            <img src="/копия_сайта_HTMLCSS/img/logo.png" width="135" height="25" alt="header-Logo">
+        </a>
+        <nav class="header-nav">
+            <ul class="header-list">
+                <li class="header-item">
+                    <a href="" class="header-link is-current">Home</a>
+                </li>
+                <li class="header-item">
+                    <a href="" class="header-link">Pages</a>
+                </li>
+                <li class="header-item">
+                    <a href="" class="header-link">Portfolio</a>
+                </li>
+                <li class="header-item">
+                    <a href="" class="header-link">Blog</a>
+                </li>
+                <li class="header-item">
+                    <a href="" class="header-link">Shop</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="header-activity">
+            <button class="header-book-button button">Book now</button>
+            <button class="header-burger-button">
+                <span class="header-burger-button-line"></span>
+                <span class="header-burger-button-line"></span>
+                <span class="header-burger-button-line"></span>
+            </button>
+        </div>
+    </header>
+    <main>
+        <h1 class="visually-hidden">Crossfit</h1>
+        <section class="banner">
+            <h2 class="visually-hidden">
+                Upcoming ivents!
+            </h2>
+            <div class="banner-body">
+                <div class="banner-info">
+                    New event <br>
+                    coming up / <time datetime="06-07">june 7</time> - <time datetime="06-13">13</time> 
+                </div>
+                <h3 class="banner-title">Crossfit</h3>
+                <div class="banner-pagination">
+                    <ul class="banner-pagination-list">
+                        <li class="banner-pagination-item">
+                            <button class="banner-pagination-button"></button>
+                        </li>
+                        <li class="banner-pagination-item">
+                            <button class="banner-pagination-button"></button>
+                        </li>
+                        <li class="banner-pagination-item">
+                            <button class="banner-pagination-button is-current"></button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section class="motivation">
+            <h2 class="visually-hidden">Motivation strong</h2>
+            <ul class="motivation-cards">
+                <li class="motivation-body">
+                    <div class="motivation-card container">           
+                        <div class="motivation-info">
+                            <h3 class="motivation-title backdrop-title"
+                                data-title="Strong">
+                                Be you, just stronger! <br>
+                                Power is in you 
+                            </h3>
+                               <div class="motivation-description">
+                                Unum solum justo ex ius. Pro cu probo laboramus <br> eius insolens euripidis te eos, ut agam tota.
+                               </div>
+                            <button class="motivation-button button">View more</button>
+                        </div>
+                        <img class="motivation-image" src="/Сайт HTML_CSS_FIGMA/img/motivation/pulling.jpeg" width="518" height="760" alt="">
+                    </div>
+                </li>
+                <li class="motivation-body">
+                    <div class="motivation-card container">           
+                        <div class="motivation-info">
+                            <h3 class="motivation-title backdrop-title"
+                                data-title="Start">
+                                Be you, just stronger! <br>
+                                Power is in you 
+                            </h3>
+                               <div class="motivation-description">
+                                Unum solum justo ex ius. Pro cu probo laboramus <br> eius insolens euripidis te eos, ut agam tota.
+                               </div>
+                            <button class="motivation-button button">View more</button>
+                        </div>
+                        <img class="motivation-image" src="/Сайт HTML_CSS_FIGMA/img/motivation/2.jpeg" width="518" height="760" alt="">
+                    </div>
+                </li>
+            </ul>
+        </section>
+        <section class="Training">
+            <h2 class="visually-hidden">Fitness-items</h2>
+            <div class="training-body">
+                <ul class="training-types">
+                    <li class="fit-item">
+                        <img src="/копия_сайта_HTMLCSS/icons/training-types/1.png" width="150" height="120" alt="" loading="lazy" class="strelka">
+                        <h3 class="training-title">Maxpump</h3>
+                    </li>
+                    <li class="fit-item">
+                        <img src="/копия_сайта_HTMLCSS/icons/training-types/2.png" width="150" height="120" alt="" loading="lazy" class="strelka">
+                        <h3 class="training-title">Aron Gym</h3>
+                    </li>
+                    <li class="fit-item">
+                        <img src="/копия_сайта_HTMLCSS/icons/training-types/3.png" width="125" height="120" alt="" class="strelka">
+                        <h3 class="training-title">Fit & Tone</h3>
+                    </li>
+                    <li class="fit-item">
+                        <img src="/копия_сайта_HTMLCSS/icons/training-types/4.svg" width="150" height="120" alt="" class="strelka">
+                        <h3 class="training-title">Forza</h3>
+                    </li>
+                    <li class="fit-item">
+                        <img src="/копия_сайта_HTMLCSS/icons/training-types/5.svg" width="130" height="120" alt="" class="strelka">
+                        <h3 class="training-title">Balance Fitness</h3>
+                    </li>
+                    <li class="fit-item">
+                        <img src="/копия_сайта_HTMLCSS/icons/training-types/6.svg" width="150" height="120" alt="" class="strelka">
+                        <h3 class="training-title">Maxpump</h3>
+                    </li>
+            </div>
+        </section>
+        <section class="authorization">
+            <h2 class="visually-hidden">Loging</h2>
+                <div class="auto-body">
+                    <img src="/копия_сайта_HTMLCSS/icons/section.elementor-section.png" alt="">
+                    <h3 class="body-title">Join us</h3>
+                    <h4 class="body-title2 backdrop-title" data-title="GO!"
+                    >Start here</h4>
+                    <div class="text-description">fill the form below to start your journey</div>
+                    <div class="button-auto">
+                        <button class="body-button-name button">Name</button>
+                        <button class="body-button-name button">Email</button>
+                        <button class="motivation-button button">Subscribe</button>
+
+                    </div>
+                </div>
+        </section>
+    </main>
+</body>
+   
+   
+

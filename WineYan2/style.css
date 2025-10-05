@@ -1,0 +1,723 @@
+@font-face {
+    font-family: 'OpenSans';
+    src: url(fonts/OpenSans_Condensed-Regular.woff2) format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Squada-One';
+    src: url(fonts/SquadaOne-Regular.woff2) format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Inter';
+    src: url(fonts/Inter_18pt-Regular.woff2) format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/**
+  Нормализация блочной модели
+ */
+ *,
+ ::before,
+ ::after {
+   box-sizing: border-box;
+ }
+ 
+ /**
+   Убираем внутренние отступы слева тегам списков,
+   у которых есть атрибут class
+  */
+ :where(ul, ol):where([class]) {
+   padding-left: 0;
+ }
+ 
+ /**
+   Убираем внешние отступы body и двум другим тегам,
+   у которых есть атрибут class
+  */
+ body,
+ :where(blockquote, figure):where([class]) {
+   margin: 0;
+ }
+ 
+ /**
+   Убираем внешние отступы вертикали нужным тегам,
+   у которых есть атрибут class
+  */
+ :where(
+   h1,
+   h2,
+   h3,
+   h4,
+   h5,
+   h6,
+   p,
+   ul,
+   ol,
+   dl
+ ):where([class]) {
+   margin-block: 0;
+ }
+ 
+ :where(dd[class]) {
+   margin-left: 0;
+ }
+ 
+ :where(fieldset[class]) {
+   margin-left: 0;
+   padding: 0;
+   border: none;
+ }
+ 
+ /**
+   Убираем стандартный маркер маркированному списку,
+   у которого есть атрибут class
+  */
+ :where(ul[class]) {
+   list-style: none;
+ }
+ 
+ :where(address[class]) {
+   font-style: normal;
+ }
+ 
+ /**
+   Обнуляем вертикальные внешние отступы параграфа,
+   объявляем локальную переменную для внешнего отступа вниз,
+   чтобы избежать взаимодействие с более сложным селектором
+  */
+ p {
+   --paragraphMarginBottom: 24px;
+ 
+   margin-block: 0;
+ }
+ 
+ /**
+   Внешний отступ вниз для параграфа без атрибута class,
+   который расположен не последним среди своих соседних элементов
+  */
+ p:where(:not([class]):not(:last-child)) {
+   margin-bottom: var(--paragraphMarginBottom);
+ }
+ 
+ 
+ /**
+   Упрощаем работу с изображениями и видео
+  */
+ img,
+ video {
+   display: block;
+   max-width: 100%;
+   height: auto;
+ }
+ 
+ /**
+   Наследуем свойства шрифт для полей ввода
+  */
+ input,
+ textarea,
+ select,
+ button {
+   font: inherit;
+ }
+ 
+ html {
+   /**
+     Пригодится в большинстве ситуаций
+     (когда, например, нужно будет "прижать" футер к низу сайта)
+    */
+   height: 100%;
+   /**
+     Убираем скачок интерфейса по горизонтали
+     при появлении / исчезновении скроллбара
+    */
+   scrollbar-gutter: stable;
+ }
+ 
+ /**
+   Плавный скролл
+  */
+ html,
+ :has(:target) {
+   scroll-behavior: smooth;
+ }
+ 
+ body {
+   /**
+     Пригодится в большинстве ситуаций
+     (когда, например, нужно будет "прижать" футер к низу сайта)
+    */
+   min-height: 100%;
+   /**
+     Унифицированный интерлиньяж
+    */
+   line-height: 1.5;
+ }
+ 
+ /**
+   Нормализация высоты элемента ссылки при его инспектировании в DevTools
+  */
+ a:where([class]) {
+   display: inline-flex;
+ }
+ 
+ /**
+   Курсор-рука при наведении на элемент
+  */
+ button,
+ label {
+   cursor: pointer;
+ }
+ 
+ /**
+   Приводим к единому цвету svg-элементы
+   (за исключением тех, у которых уже указан
+   атрибут fill со значением 'none' или начинается с 'url')
+  */
+ :where([fill]:not(
+   [fill="none"],
+   [fill^="url"]
+ )) {
+   fill: currentColor;
+ }
+ 
+ /**
+   Приводим к единому цвету svg-элементы
+   (за исключением тех, у которых уже указан
+   атрибут stroke со значением 'none')
+  */
+ :where([stroke]:not(
+   [stroke="none"],
+   [stroke^="url"]
+ )) {
+   stroke: currentColor;
+ }
+ 
+ /**
+   Чиним баг задержки смены цвета при взаимодействии с svg-элементами
+  */
+ svg * {
+   transition-property: fill, stroke;
+ }
+ 
+ /**
+   Приведение рамок таблиц в классический 'collapse' вид
+  */
+ :where(table) {
+   border-collapse: collapse;
+   border-color: currentColor;
+ }
+ 
+ /**
+   Удаляем все анимации и переходы для людей,
+   которые предпочитают их не использовать
+  */
+ @media (prefers-reduced-motion: reduce) {
+   *,
+   ::before,
+   ::after {
+     animation-duration: 0.01ms !important;
+     animation-iteration-count: 1 !important;
+     transition-duration: 0.01ms !important;
+     scroll-behavior: auto !important;
+   }
+ }
+
+ .visually-hidden {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    margin: -1px !important;
+    border: 0 !important;
+    padding: 0 !important;
+    white-space: nowrap !important;
+    clip-path: inset(100%) !important;
+    clip: rect(0 0 0 0) !important;
+    overflow: hidden !important;
+  }
+
+
+ :root {
+    --color-coral: #D89F9F;
+    --color-beige: #FDEAEA;
+    --color-title: #6D4F4F;
+
+    --font-family-header: 'Inter', sans-serif;
+    --font-family-base: 'OpenSans', sans-serif;
+    --font-family-title: 'Squada-One', sans-serif;
+
+    --padding-inline: 310px;
+
+    --transition-duration: 0.2s;
+
+    --header-height: 80px;
+
+    --padding-content: clamp()
+    
+ }
+ 
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  color: white;
+}
+
+ body {
+   font-family: var(--font-family-base);
+   font-weight: 400;
+   font-size: 16px;
+   line-height: 27px;
+   color: black;
+   background-color: var(--color-beige);
+  }
+  
+  .header {
+    display: flex;
+    flex-direction: row;
+    column-gap: 90px;
+    min-height: 150px;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-coral);
+    /* padding-inline: clamp(100px, 16.14vw, 310px);     */
+  }
+
+.header-logo {
+  height: 100px;
+  width: 100px;}
+
+.header-nav-body {
+  display: flex;
+  column-gap: 20px;
+}
+  
+.header-menu {
+  background-color: #D89F9F;
+}
+  
+   .header-menu-link {
+       font-family: var(--font-family-header);
+       text-decoration: none;
+       color: black;
+   }
+   
+   .header-menu-link:hover {
+       color: var(--color-beige);
+   }
+  
+  .header-menu-list {
+    display: flex;
+    column-gap: 80px;
+}
+
+.header-menu-search {
+  display: flex;
+  position: relative;
+}
+
+.header-search-input {
+  position: absolute;
+  height: 40px;
+  top: 10px;
+  padding-inline: 10px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border-radius: 30px;
+  border: none;
+  box-shadow: 0px 2px 6px ;
+}
+
+/* .search-icon {
+  position: absolute;
+  right: 4%;
+  top: 15px;
+} */
+
+.search-icon:hover {
+  color: var(--color-title);
+}
+
+.header-menu-search-button {
+  display: flex;
+  position: absolute;
+  right: 4%;
+  top: 13px;
+  border: none;
+  background-color: transparent;
+}
+
+.header-actions-contacts {
+  position: absolute;
+  top: 3px
+}
+
+.header-actions-contacts-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.header-action-phones:hover {
+  animation: header-action-phone 0.35s infinite;
+  color: #FDEAEA;
+}
+
+@keyframes header-action-phone {
+  0% { transform: translateX(0) }
+  25% { transform: translateX(5px) }
+  50% { transform: translateX(-5px) }
+  75% { transform: translateX(5px) }
+  100% { transform: translateX(0) }
+}
+
+span.horizontal-shake {
+  animation: horizontal-shaking 0.35s infinite;
+}
+.header-actions-contacts-link {
+  text-decoration: none;
+  color: black;
+}
+
+.header-actions-contacts-link:hover {
+  color: white;
+}
+
+.header-actions-icon {
+    display: flex;
+    column-gap: 13px;
+}
+
+.header-menu-button {
+    display: flex;
+    border: none;
+    background-color: var(--color-coral);
+}
+
+.header-icons:hover {
+    color: var(--color-beige);
+}
+
+.header-burger-button {
+ display: none;
+ justify-content: center;
+ flex-direction: column;
+ row-gap: 4px;
+ padding-left: 8px;
+ width: 40px;
+ height: 40px;
+ color: var(--color-light);
+ background-color: transparent;
+ border: 1px solid black;
+ border-radius: 50%;
+}
+
+.header-burger-button-line {
+  display: flex;
+  width: 5px;
+  height: 1px;
+  background-color: currentColor;
+  box-shadow: 16px 0 0 currentColor;
+}
+
+.header-burger-button:hover {
+  color: white;
+  border-color: currentColor;
+}
+
+.main-title {
+    /* padding-inline: 310px; */
+    padding-inline: clamp(100px, 16.14vw, 310px);    
+
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 80px);
+    justify-content: center;
+    align-items: center;
+}
+
+.title-one {
+    position: absolute;
+    font-size: clamp(100px, 10.41vw, 200px);
+    font-family: var(--font-family-title);
+    font-weight: 400;
+    color: var(--color-title);
+    top: 43%;
+    left: 30%;
+
+}
+
+.title-two {
+    position: absolute;
+    font-size: clamp(100px, 10.41vw, 200px);
+    font-family: var(--font-family-title);
+    font-weight: 400;
+    color: var(--color-title);
+    bottom: 40%;
+    left: 55%;
+}
+
+.bokal {
+    padding-bottom: 100px;
+}
+
+.grape {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 150px;
+}
+
+.grape-title {
+    text-align: center;
+    font-size: clamp(100px, 10.41vw, 200px);
+    font-family: var(--font-family-title);
+    font-weight: 400;
+    line-height: 1;
+    color: var(--color-title);
+    padding-bottom: 150px;
+}
+
+.grape-body-title:not(:last-child) {
+    padding-bottom: 40px;
+}
+
+.grape-container { 
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    font-family: var(--font-family-base);
+    font-weight: 400;
+    font-size: 16px;
+    column-gap: 200px;
+    padding-inline: clamp(100px, 16.14vw, 310px);    
+
+}
+
+.grape-body {
+    max-width: 400px;
+}
+
+.grape-video-wrapper {
+  display: flex;
+
+  max-height: 400px;
+  max-width: 400px;
+}
+
+
+
+.play {
+    color: var(--color-title);
+}
+
+.play:hover {
+    color: var(--color-coral);
+}
+
+.grape-video-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.grape-video-play-button {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    border: none;
+    border-radius: 50%;
+}
+
+.product-cards {
+  padding-bottom: 75px;
+}
+
+.products-cards-list {
+  display: flex;
+  justify-content: center;
+  column-gap: 50px;
+}
+
+.products-cards-item {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.products-cards-item:hover {
+  box-shadow: 0px 2px 10px;
+}
+
+
+.products-cards-link {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  text-decoration: none;
+  color: white;
+  font-size: 40px;
+}
+
+.products-cards-link:hover {
+  color: var(--color-coral);
+}
+
+.footer {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  min-height: 450px;
+  justify-content: center;
+  padding-inline: 310px;
+  background-color: var(--color-coral);
+}
+
+
+
+.footer-body-list {
+  display: flex;
+  flex-direction: row;
+  column-gap: 150px;
+  justify-content: center;
+}
+
+
+
+.footer-body-contacts-link-tel::after {
+  content: '';
+  width: 20px;
+  margin-left: 5px;
+  aspect-ratio: 1;
+  background: url(./icons/telegram.svg) center/contain no-repeat;
+}
+.footer-body-contacts-link-tel:hover::after {
+  filter: invert(1);
+}
+
+.footer-body-list:not(:last-child) {
+  padding-bottom: 100px;
+}
+
+.footer-body-item-title:not(:last-child) {
+  padding-bottom: 10px;
+}
+
+.footer-body-contacts,
+.footer-body-catalog {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-line {
+  position: absolute;
+   top: 70%;
+  left: 50%;
+  translate: -50% -50%;
+  display: flex;
+  width: 700px;
+  height: 1px;
+  background-color: black;
+}
+
+.footer-privacy {
+  display: flex;
+  justify-content:center;
+  column-gap: 5px;
+  background-color: var(--color-coral);
+}
+
+
+@media (max-width:1250px) {
+  .header {
+    column-gap: 70px;
+  }
+  .header-menu-list {
+    column-gap: 50px;
+  }
+  .header-search-input {
+    max-width: 400px
+  }
+  .footer-body-list {
+    column-gap: 60px;
+  }
+
+}
+
+@media (max-width:1000px) {
+  .header {
+    column-gap: 30px;
+  }
+   .header-menu-list {
+    column-gap: 30px;
+  }
+  .header-search-input {
+    max-width: 400px
+  }
+  .grape-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 30px;
+  }
+  .products-cards-list {
+    column-gap: 25px;
+  }
+}
+
+@media(max-width:700px) {
+  .header {
+    column-gap: 10px;
+  }
+
+  .header-logo {
+    height: 60px;
+    aspect-ratio: 1;
+  }
+
+  .header-menu-list {
+    display: none;
+  }
+  .header-menu-search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .header-menu-search-button {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    position: relative;
+    min-width: 200px ;
+  }
+
+  .header-nav-body {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+  row-gap: 5px;
+}
+  .header-actions-contacts{
+    right: 20px;
+  }
+
+  .header-burger-button {
+    display: inline-flex;
+  }
+}

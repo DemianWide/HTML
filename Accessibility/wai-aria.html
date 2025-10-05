@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tabs+ally</title>
+    <link rel="stylesheet" href="wai-aria.css">
+</head>
+<body>
+    <div class="tabs">
+        <h3 class="tabs__title" id="tabs-title">Домашний питомец</h3>
+        <div class="tabs__buttons" role="tablist" aria-labelledby="tabs-title">
+            <button 
+                class="tabs__button is-active"
+                id="tab-1"
+                type="button"
+                role="tab"
+                aria-selected="true"
+                aria-controls="tabpanel-1">
+                Собака
+            </button>
+
+            <button 
+                class="tabs__button"
+                id="tab-2"
+                type="button"
+                role="tab"
+                aria-selected="false"
+                tabindex="-1"
+                aria-controls="tabpanel-2">
+                Кошка
+            </button>
+
+            <button 
+                class="tabs__button"
+                id="tab-3"
+                type="button"
+                role="tab"
+                tabindex="-1"
+                aria-selected="false"
+                aria-controls="tabpanel-3">
+                Попугай
+            </button>
+        </div>              
+        
+        <div class="tabs__content is-active" id="tabpanel-1" tabindex="0" role="tabpanel" aria-labelledby="tab-1">
+            <img src="https://a.d-cd.net/ZyoFiLHPliYCMAHaT5bFT0u9FAQ-960.jpg" width="300" height="200">
+        </div>
+
+        <div class="tabs__content" id="tabpanel-2" tabindex="0" role="tabpanel" aria-labelledby="tab-2">
+            <img src="https://avatars.mds.yandex.net/i?id=4d39141a9fcdecd39ee848f7cc9b2209-5179294-images-thumbs&n=13" width="300" height="200">
+        </div>
+
+        <div class="tabs__content" id="tabpanel-3" tabindex="0" role="tabpanel" aria-labelledby="tab-3">
+            <img src="https://i.pinimg.com/736x/c2/c1/e2/c2c1e2e0e1585493286e47900159d6c4.jpg" width="300" height="200">
+        </div>
+    </div>
+
+    <script src="wai-aria.js"></script>
+
+</body>
+</html>

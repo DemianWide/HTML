@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WineYan</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <a href="/" class="header-logo">
+            <img src="./img/logo.svg" alt="">
+        </a>
+        <div class="header-nav-body">
+            <nav class="header-menu">
+                <ul class="header-menu-list">
+                    <li class="header-menu-item">
+                        <a href="/" class="header-menu-link">Главная</a>
+                    </li>
+                    <li class="header-menu-item">
+                        <a href="/" class="header-menu-link">Меню</a>
+                    </li>
+                    <li class="header-menu-item">
+                        <a href="/" class="header-menu-link">Контакты</a>
+                    </li>
+                    <li class="header-menu-item">
+                        <a href="/" class="header-menu-link">Доставка</a>
+                    </li>
+                </ul>
+                <div class="header-menu-search">
+                    <input type="text" class="header-search-input">
+                    <button class="header-menu-search-button">
+                        <svg class="search-icon" fill="#000000" width="33px" height="33px" viewBox="-2.5 -2.5 24 24" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin" class="jam jam-search"><path d='M8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12zm6.32-1.094l3.58 3.58a1 1 0 1 1-1.415 1.413l-3.58-3.58a8 8 0 1 1 1.414-1.414z'/></svg>
+                    </button>
+                </div>
+            </nav>
+            <div class="header-actions">
+                <div class="header-actions-contacts">
+                    <ul class="header-actions-contacts-list">
+                        <li class="header-actions-contacts-item">
+                            <svg class="header-action-phones" fill="#000000" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                                width="23px" height="23px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+                                <path d="M256,0C114.609,0,0,114.609,0,256s114.609,256,256,256s256-114.609,256-256S397.391,0,256,0z M256,472
+                                    c-119.297,0-216-96.703-216-216S136.703,40,256,40s216,96.703,216,216S375.297,472,256,472z"/>
+                                <path d="M327.125,383.969c5.703,0.016,56.875-37.828,56.875-42.656s-57.266-40.906-62.219-40.906s-21.578,19.938-26.062,22.156
+                                    c-4.5,2.219-32.5,1.422-63.703-29.781c-31.219-31.188-41.875-67.109-41.875-72.75s26.031-23.062,26.75-27.156
+                                    S182.578,128,176.891,128S128,180.5,128,184.875s3.953,60.656,75.219,131.906S321.422,383.938,327.125,383.969z"/>
+                                </svg>
+                            <a class="header-actions-contacts-link" href="tel:74958888888"> +7 (495) 888 - 88 - 88</a>
+                        </li>
+                        <!-- <li class="header-mail">
+                            <a class="header-actions-contacts-link" href="mailto:winecoopy@mail.ru">mail: winecoopy@mail.ru</a>
+                        </li> -->
+                    </ul>
+                </div>
+                <div class="header-actions-icon">
+                    <button class="header-menu-button hearth">
+                        <svg class="header-icons" fill="#000000" width="33px" height="33px" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"><path d="M7.975 2c-2.235.116-4.365 1.203-5.82 2.89C.7 6.57 0 8.786 0 11c0 1.938.697 3.816 1.646 5.46.95 1.644 2.19 3.077 3.5 4.394 2.824 2.833 6.08 5.232 9.622 7.09.145.076.32.076.464 0 3.543-1.858 6.798-4.257 9.622-7.09 1.31-1.317 2.55-2.75 3.5-4.393C29.304 14.817 30 12.94 30 11c0-2.22-.7-4.428-2.154-6.11C26.39 3.202 24.26 2.115 22.026 2c-1.516-.078-3.045.286-4.362 1.04-1.097.626-1.975 1.558-2.664 2.614-.69-1.056-1.567-1.988-2.664-2.615C11.02 2.285 9.49 1.92 7.976 2zm.05 1c1.32-.068 2.665.25 3.813.906 1.148.656 2.107 1.652 2.72 2.824.186.36.698.36.885 0 .612-1.172 1.57-2.168 2.72-2.824 1.147-.656 2.49-.974 3.812-.906 1.942.1 3.837 1.062 5.115 2.54C28.37 7.023 29 9 29 11c0 1.73-.628 3.43-1.512 4.96-.885 1.535-2.064 2.904-3.342 4.186-2.686 2.697-5.788 4.975-9.146 6.766-3.358-1.79-6.46-4.07-9.146-6.766-1.278-1.282-2.457-2.65-3.342-4.185C1.628 14.43 1 12.73 1 11c0-2 .63-3.978 1.91-5.46C4.188 4.063 6.083 3.1 8.025 3z"/></svg>
+                    </button>
+                    <button class="header-menu-button user">
+                        <svg class="header-icons" width="33px" height="33px" viewBox="-0.5 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12.0001 13.09C14.4909 13.09 16.5101 11.0708 16.5101 8.58C16.5101 6.08919 14.4909 4.07 12.0001 4.07C9.5093 4.07 7.49011 6.08919 7.49011 8.58C7.49011 11.0708 9.5093 13.09 12.0001 13.09Z" stroke="#0F0F0F" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M8.98008 11.91C8.97008 11.91 8.97008 11.91 8.96008 11.92" stroke="#0F0F0F" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M16.9701 12.82C19.5601 14.4 21.3201 17.19 21.5001 20.4C21.5101 20.69 21.2801 20.93 20.9901 20.93H3.01007C2.72007 20.93 2.49007 20.69 2.50007 20.4C2.68007 17.21 4.43007 14.43 6.99007 12.85" stroke="#0F0F0F" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>            
+                    </button>
+                    <button class="header-menu-button basket">
+                        <svg class="header-icons" fill="#000000" width="33px" height="33px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M1015.66 284a31.82 31.82 0 0 0-25.998-13.502H310.526l-51.408-177.28c-20.16-69.808-68.065-77.344-87.713-77.344H34.333c-17.569 0-31.777 14.224-31.777 31.776S16.78 79.425 34.332 79.425h137.056c4.336 0 17.568 0 26.593 31.184l176.848 649.936c3.84 13.712 16.336 23.183 30.591 23.183h431.968c13.409 0 25.376-8.4 29.905-21.024l152.256-449.68c3.504-9.744 2.048-20.592-3.888-29.024zM815.026 720.194H429.539L328.387 334.066h616.096zM752.003 848.13c-44.192 0-80 35.808-80 80s35.808 80 80 80 80-35.808 80-80-35.808-80-80-80zm-288 0c-44.192 0-80 35.808-80 80s35.808 80 80 80 80-35.808 80-80-35.808-80-80-80z"/></svg>
+                    </button>
+                </div>
+                <button class="header-burger-button">
+                    <span class="header-burger-button-line"></span>
+                    <span class="header-burger-button-line"></span>
+                    <span class="header-burger-button-line"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+    <main class="content">
+        <h1 class="visually-hidden">WineYan</h1>
+        <section class="main-title">
+            <h2 class="visually-hidden">Title</h2>
+            <div class="banner-body">
+                <h2 class="title-one">WINE</h2>
+                <img src="./img/черная-бутылка-1.png" alt="">
+                <h2 class="title-two">YAN</h2>
+            </div>
+        </section>
+        <section class="bokal">
+            <div class="bokal-img">
+                <img class="bokal-wine" src="./img/вставка-c-бокалами.png" alt="">
+            </div>
+        </section>
+        <section class="grape">
+            <h2 class="grape-title">
+                Chevalier Lacassan
+            </h2>
+            <div class="grape-container">
+                <div class="grape-body">
+                    <h2 class="grape-body-title">
+                        Chevalier Lacassan
+                    </h2>
+                    <div class="grape-description">
+                        Линейка французских вин бренда Chevalier Lacassan представлена красными и белыми,
+                        сухими и полусладкими, тихими и игристыми винами. В производстве вина этого бренда используется отборный
+                        виноград сортов шардоне, уни блан, совиньон блан, семильон, мерло, каберне совиньон, который вызревает на виноградниках провинции Бордо.
+                    </div>
+                </div>
+                <div class="grape-video-wrapper">
+                    <video class="video-wrapper" poster="./img/видеоcвиноградом.png"></video>
+                    <button class="grape-video-play-button">
+                        <svg class="play" viewBox="0 0 60 61" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60.000000" height="61.000000" fill="none" customFrame="#000000">
+	                        <rect id="кнопка плэй" width="60.000000" height="60.000000" x="0.000000" y="0.000000" />	                        <path id="Polygon 1" d="M22.3923 18L1.60769 18L12 0L22.3923 18Z" fill="rgb(148.341,101.271,101.271)" fill-rule="evenodd" transform="matrix(0.0246168,0.999697,-0.999697,0.0246168,41.7012,18.708)" /></svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+        <section class="product-cards">
+            <ul class="products-cards-list">
+                <li class="products-cards-item">
+                    <img class="products-cards-item-img" src="./img/action-eclipse.png" alt="">
+                    <a href="/" class="products-cards-link">Акции</a>
+                </li>
+                <li class="products-cards-item">
+                    <img class="products-cards-item-img" src="./img/news.eclipse.png" alt="">
+                    <a href="/" class="products-cards-link">Новинки</a>
+                </li>
+                <li class="products-cards-item">
+                    <img class="products-cards-item-img" src="./img/popular-eclipse.png" alt="">
+                    <a href="/" class="products-cards-link">Популярные</a>
+                </li>
+            </ul>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="footer-body">
+            <ul class="footer-body-list">
+                <li class="footer-body-item">
+                    <h3 class="footer-body-item-title">Контакты</h2>
+                    <div class="footer-body-contacts">
+                        <a href="telto:74958888888" class="footer-body-contacts-link-tel">+ 7 (495) 888 - 88 - 88</a>
+                        <a href="mailto:wine.company@ru." class="footer-body-contacts-link">email: wine.company@ru.</a>
+                        <address>Г. Москва, ул. Винная, 35</address>
+                    </div>
+                </li>
+                <li class="footer-body-item">
+                    <h3 class="footer-body-item-title">Каталог</h2>
+                    <div class="footer-body-catalog">
+                        <a href="/" class="footer-body-catalog-link">Красные вины</a>
+                        <a href="/" class="footer-body-catalog-link">Белые вины</a>
+                        <a href="/" class="footer-body-catalog-link">Игристые вины</a>
+                    </div>
+                </li>
+                <li class="footer-body-item">
+                    <h3 class="footer-body-item-title">Информация</h2>
+                    <div class="footer-body-catalog">
+                        <a href="/" class="footer-body-catalog-link">О компании</a>
+                        <a href="/" class="footer-body-catalog-link">Скидки</a>
+                        <a href="/" class="footer-body-catalog-link">Отзывы</a>
+                        <a href="/" class="footer-body-catalog-link">Новинки</a>
+                        <a href="/" class="footer-body-catalog-link">Статьи</a>
+                        <a href="/" class="footer-body-catalog-link">Гарантии</a>
+                    </div>
+                </li>
+            </ul>
+            <span class="footer-line"></span>
+        </div>
+    </footer>
+        <div class="footer-privacy">
+            <a href="/" class="footer-privacy-link">© WineYan, 2025</a>
+            <a href="/" class="footer-privacy-link">Пользовательское соглашение</a>
+            <a href="/" class="footer-privacy-link">Политика конфиденциальности</a>
+        </div>
+    </div>
+</body>
+</html>

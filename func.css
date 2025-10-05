@@ -1,4 +1,4 @@
-.nav-bar {
+.header-nav {
     display: flex;
     border-bottom: 2px solid rgb(197, 197, 197);
     /* background-color: lightskyblue; */
@@ -8,11 +8,12 @@
     box-sizing: border-box;
 }
 
-.nav-name {
+.header-nav-name {
     flex-direction: row;
     display: flex;
-    align-items: center;
-    width: 60%;
+    align-items: flex-start;
+    width: 100%;
+    justify-content: space-between;
 }
 
 .nav-element-lang {
@@ -20,11 +21,14 @@
     padding: 10px;
     text-align: center;
     border-right: 1px solid rgb(224, 221, 221);
-    width: 4%;
+    width: 10%;
+    overflow: hidden;
 }
 
-.nav-JS {
-    width: 18%;
+.JS-png {
+    width: 20%;
+    display: flex;
+
 }
 
 .nav-bar-2 {
@@ -40,10 +44,12 @@
     gap: 10px;
     column-count: 2;
     align-items: flex-start;
-    width: 100%;
+    height: 100%;
 }
 
+
 .panel-left { 
+    
     width: 20%;
     height: 100vh;
     background-color: rgb(240, 239, 239);
@@ -53,6 +59,7 @@
     top: 0;
     left: 0;
     right: 0;
+    overflow: auto;
     
 
 
@@ -64,6 +71,7 @@
 
 .nav-element2 {
     margin-bottom: 20px;
+    position: sticky;
 }
 
 .icon {
@@ -119,11 +127,13 @@ h1 {
 }
 
 .banner {
+    display: flex;
     background-image: 
-    url(type.jpg);
-    height: 600px;
+    url(typeJS.jpg);
+    height: 350px;
     background-position: center;
     background-repeat: no-repeat;
+    background-size: 40%;
     width: 100%;
     background-attachment: fixed;
 }
@@ -137,19 +147,19 @@ h1 {
 .header2{
     background-color: rgb(189, 189, 184);
 }
-.funcs {
+/* .funcs {
     width: 350px;
     height: 350px;
-}
+} */
 
 ol {
     background-color:rgb(206, 208, 209) ;
+    display: block;
+    overflow-wrap: break-word;  /* новая функци */
 }
 li {
     background-color: rgb(235, 235, 235);
-    padding-left: 5px;
-    height: 20px;
-    padding-top: 10px;
+    padding: 5px;
 }
 
 span {
@@ -160,12 +170,12 @@ span {
     background-color: rgb(231, 223, 241);
 }
 
-.password {
+/* .password {
     mask-type: alpha;
-}
-.box {
+} */
+/* .box {
     margin: 500px;
-}
+} */
 .log {
     display: inline;
     color: #f70505;
@@ -216,6 +226,50 @@ span {
 .comments {
     color: gray;
 }
+
+.JS2 {
+    display: none;
+}
+
+
+@media (max-width:700px) {
+    
+    .JS {
+        display: none;
+        background-image: url(js.jpg);
+    }
+    .JS2 {
+        display: block;
+    }
+    .nav-icon {
+        display: none;
+    }
+    .flex-container {
+        font-size: 15px;
+    }
+    .nav-name {
+        font-size: 15px;
+    }
+}
+
+@media (max-width:500px) {
+    .flex-container {
+        font-size: 10px;
+    }
+    .nav-name {
+        font-size: 10px;
+    }
+    .nav-name {
+        display: none;
+    }
+    .nav-bar-2{
+        width: 100%;
+    }
+    .nav-JS {
+        justify-content: flex-end;
+    }
+}
+
 /* .li1 {
     background-color: rgb(235, 235, 235);
 }

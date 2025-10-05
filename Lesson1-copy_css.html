@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Типы данных</title>
+    <!-- <link rel="stylesheet" href="func.css"> -->
+    <!-- <link rel="icon" href="JS.png" type="img/png"> -->
+    <style>
+/* *{
+    margin: 0; 
+    padding: 0;
+} */
+
+.nav-bar,
+.nav-element,
+.nav-name,
+.nav-element-lang,
+.nav-JS,
+.nav-bar-2,
+.flex-container,
+.banner {
+    display: flex;
+}
+
+.nav-bar {
+    border-bottom: 2px solid rgb(197, 197, 197);
+    /* background-color: lightskyblue; */
+    gap: 10px;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    margin-left: -10px;
+    padding: 1px;
+}
+
+.nav-element {
+    height: 50px;
+    flex-grow: 1;
+    align-items: center;
+ }
+
+.nav-name {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 58%;
+}
+
+.nav-element-lang {
+    color: rgb(129, 125, 125);
+    padding: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    border-right: 1px solid rgb(224, 221, 221);
+    width: 6%;
+    margin: 0px;
+    
+}
+
+.nav-JS {
+    width: 10%;
+}
+
+.nav-bar-2 {
+    justify-content: flex-end;
+    align-items: center;
+    width: 20%;
+}
+
+.flex-container {
+    flex-direction: row;
+    gap: 10px;
+    column-count: 2;
+    align-items: flex-start;
+    height: 100%;
+}
+
+.panel-left { 
+    width: 20%;
+    max-height: 100vh;
+    background-color: rgb(240, 239, 239);
+    color: rgb(129, 125, 125);
+    border-right: 1px solid rgb(224, 221, 221);
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin-left: -20px;
+    padding-left: 10px;
+    overflow-y: auto;
+}
+
+.nav-element {
+    margin-right: 10px;   
+}
+
+.nav-element2 {
+    margin-bottom: 20px;
+}
+
+.icon {
+    width: 6%;
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+.icon {
+    padding-top: 20px;
+    padding-bottom: 50px;
+    margin-left: 5px;
+}
+
+.pseudo-p::before {
+    content: "👉";
+}
+
+.pseudo-p::after {
+    content: "👈";
+}
+
+.basic {
+    width: 75%;
+}
+
+
+button {
+    background-color: rgb(238, 217, 217);
+    border-radius: 10px;
+}
+
+.hover-effect:hover {
+    background-color: rgb(136, 115, 119);
+
+}
+
+
+a {
+    color: gray;
+    text-decoration: none;
+}
+
+.none {
+    background-color: white;
+}
+
+.nav-icon{
+    padding-right: 10px;
+    justify-content: center;
+}
+
+h1 {
+    text-align: center;
+}
+.banner {
+    background-image: 
+    url("https://sun9-71.userapi.com/impg/c850608/v850608350/a0da2/462t1HD571Q.jpg?size=320x324&quality=96&sign=8bbd45c9947041dd8bbba36fdb003021&c_uniq_tag=q00Nj3zWUUagGxwBTawlxSFkJU3ZZwk2Q3WYBhg798Q&type=album");
+    height: 350px;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    background-attachment: fixed;
+    background-size: 20%;
+    background-position-x: 60%;
+}
+
+
+
+.header1{
+    text-align: center;
+    background-color: rgb(205, 243, 170);
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.header2{
+    background-color: rgb(189, 189, 184);
+}
+/* .funcs {
+    width: 350px;
+    height: 350px;
+} */
+
+
+ol {
+    background-color:rgb(206, 208, 209) ;
+    display: block;
+}
+li {
+    background-color: rgb(235, 235, 235);
+    padding: 5px
+}
+
+span {
+    background-color: rgb(235, 235, 235);
+}
+
+.foot{
+    background-color: rgb(231, 223, 241);
+}
+
+.password {
+    mask-type: alpha;
+}
+/* .box {
+    margin: 500px;
+} */
+.log {
+    display: inline;
+    color: #f70505;
+}
+.numbers {
+    display: inline;
+    color: rgb(206, 26, 146);
+}
+
+.text {
+    display: inline;
+    color: rgb(150, 197, 80);
+}
+
+.let {
+    display: inline;
+    color:rgb(84, 148, 148)
+}
+
+.boxes {
+    border: 2px solid rgb(221, 215, 211);
+    margin: 10px ;
+    padding: 5px;
+}
+
+.none {
+    background-color: white;
+    height: auto;
+    padding-left: 10px;
+}
+
+.coube {
+    display: inline;
+    background-color: hsl(46, 80%, 71%);
+    color: orange;
+    border: 1px solid gray;
+}
+.coube2{
+    display: inline;
+    background-color: hsl(46, 80%, 71%);
+    border: 1px solid gray;
+}
+.coube3 {
+    display: inline;
+    background-color: hsl(46, 80%, 71%);
+    color: orange;
+}
+.comments {
+    color: gray;
+}
+
+.JS2 {
+    display: none;
+}
+
+
+@media (max-width:700px) {
+    .JS{
+        display: none;
+    }
+    
+    .JS2 {
+        display: block;
+    }
+    .nav-icon {
+        display: none;
+    }
+    .flex-container {
+        font-size: 15px;
+    }
+    .nav-name {
+        font-size: 15px;
+    }
+    .info {
+        width: 12px;
+        height: 12px;
+    }
+}
+
+@media (max-width:500px) {
+    .flex-container {
+        font-size: 10px;
+    }
+    .nav-name {
+        font-size: 9px;
+    }
+    .nav-bar-2{
+        width: 100%;
+    }
+    .nav-JS {
+        justify-content: flex-end;
+        scale: 50%;
+    }
+    .banner {
+            background-size: 60%;
+            background-position-x: 80%;
+    }
+    /* .boxes {
+        box-sizing: 40%;
+    } */
+    .info {
+        width: 10px;
+        height: 10px;
+    }
+}
+
+/* .li1 {
+    background-color: rgb(235, 235, 235);
+}
+
+ul li ol li {
+    background:  rgb(235, 235, 235);
+} */
+
+    </style>
+</head>
+<body>
+    <div class="nav-bar">
+        <div class="nav-element-lang">
+            <!-- <div><img src="planet.jpg" alt="" width="40"></div> -->
+            <div class="">RU</div>
+        </div>
+        <div class="nav-JS">
+            <div class="JS"><img src="https://i2.wp.com/miro.medium.com/1*8JCouIElHZaElg4PcduYFg.jpeg" width="80px" alt=""></div>
+            <div class="JS2"><img src="https://miladfathy.gallerycdn.vsassets.io/extensions/miladfathy/js-snippet/0.0.3/1620337479564/Microsoft.VisualStudio.Services.Icons.Default" width="50" alt="" ></div>
+
+        </div>
+        <div class="nav-name">
+            <div class="nav-element"><a href="/">Учебник</a></div>
+            <div class="nav-element"><a href="/">Курсы</a></div>
+            <div class="nav-element"><a href="/">Форум</a></div>
+            <div class="nav-element"><a href="/">Тесты знаний</a></div>
+            <div class="nav-element"><a href="/">Скринкасты</a></div>
+        </div>
+        <div class="nav-bar-2">
+            <!-- <div class="nav-icon"> <a href="/"><img src="persona.png" width="40px" alt=""></a></div>
+            <div class="nav-icon"> <a href="/"><img src="half-moon.jpg" width="35px" alt=""></a></div> -->
+            <div class="nav-iconS"> <a href=""><img src="https://avatars.mds.yandex.net/i?id=794e45f67597c22bdf20d818ecb2c8c303bb4da6ec598f19-11744588-images-thumbs&n=13" width="40px" alt=""></a></div>
+        </div>
+    </div>
+
+
+    <div class="flex-container">
+        <div class="panel-left">
+            <div class="nav-element2"><a href="/">Учебник</a></div>
+            <div class="nav-element2"><a href="/">Основы javascript </a></div>
+            <br>
+            <div class="nav-element2"><a href="/" style="color: rgb(207, 203, 203);">Навигация по уроку</a></div>
+            <div class="nav-element2"><a href="/">Biglnt</a></div>
+            <div class="nav-element2"><a href="/">Строка</a></div>
+            <div class="nav-element2"><a href="/">Булевый тип</a></div>
+            <div class="nav-element2"><a href="/">Значение "null"</a></div>
+            <div class="nav-element2"><a href="/">Значение "undefined"</a></div>
+            <div class="nav-element2"><a href="/">Объекты и символы</a></div>
+            <div class="nav-element2"><a href="/">Оператор typeof</a></div>
+            <div class="nav-element2"><a href="/">Итого</a></div>
+            <br>
+            <div class="nav-element2"><a href="/">Задачи</a></div>
+            <div class="nav-element2"><a href="/">Комментарии</a></div>
+            <br>
+            <div class="nav-element2"><a href="/"style="color: rgb(207, 203, 203);" >Поделиться</a></div>
+            <br>
+            <div class="nav-icon-facebool-twiiter">
+                <a href="https://ru.wikipedia.org/wiki/%D0%A2%D0%B2%D0%B8%D1%82%D1%82%D0%B5%D1%80"><img src="https://www.fs.usda.gov/Internet/FSE_MEDIA/fseprd973427.png" width="30px" alt=""></a> 
+                <a href="https://en.wikipedia.org/wiki/Facebook"><img src="https://volvograd.ru/wp-content/uploads/2020/07/facebook-small-icon-19.png" width="30px" alt=""></a> 
+            </div>
+            <br>
+            <div class="nav-element2"><a href="/">Учебник</a></div>
+        </div>
+        <div class="icon"> 
+            <div class="icon-1">                
+                <!-- <img src="three_chertochki.png" width="30px" alt=""> -->
+            </div>
+            <div>
+                <!-- <img src="book.png" width="30" alt=""> -->
+            </div>
+        </div>
+        <div class="basic">
+            <h1>Типы данных в JS</h1>
+            <h2>Краткое содержание:</h2>
+            <ul class="none">
+                <li class="none">
+                    <a href="#Number"> Число</a>
+                </li>
+                <li class="none">
+                    <a href="#String">Строка</a>
+                </li>
+            </ul>
+            <br>
+            <br>
+        
+            
+            <div class="banner">
+                <!-- <img class="Types" src="type.jpg" alt="Типы данных"> -->
+            </div>
+            <section>
+                <p class="pseudo-p">Значение в JavaScript всегда относится к данным определённого типа. Например, это может быть строка или число.</p>
+                <p>Есть восемь основных типов данных в JavaScript. В этой главе мы рассмотрим их в общем, а в следующих главах поговорим подробнее о каждом.</p>
+                <p>Переменная в JavaScript может содержать любые данные. В один момент там может быть строка, а в другой – число:</p>
+                <ol class="f1">
+                    <li> 
+                        <code>                    
+                            // Не будет ошибкой
+                        </code>
+                    </li>
+                            
+                    <li>
+                        <code>
+                            <div class="let">let</div> message = <div class="text">"hello"</div>;
+                        </code>
+                    </li>
+                    <li>
+                        <code>
+                            message = <div class="log">12345</div>;
+                        </code>
+                    </li>
+                </ol>
+                <p>Языки программирования, в которых такое возможно, называются «динамически типизированными». Это значит, что типы данных есть, но переменные не привязаны ни к одному из них.</p>
+            </section>
+            <section>
+                <div class="header1">
+                    <h2 id="Number" >Число</h2>
+                </div>
+                <ol>
+                    <li>
+                        <code>
+                            <div class="let">let</div> n = <div class="log">123</div>;
+                        </code>
+                    </li>
+                    <li>
+                        <code>
+                            n = <div class="log">12.345</div>;
+                        </code>
+                    </li>
+                </ol>
+                <p> <i>Числовой</i> тип данных (<span>number</span>) представляет как целочисленные значения, так и числа с плавающей точкой</p>
+                <p>Существует множество операций для чисел, например, умножение <span>*</span>, деление <span>/</span>, сложение <span>+</span>, вычитание <span>-</span> и так далее.</p>
+                <p>
+                    Кроме обычных чисел, существуют так называемые «специальные числовые значения», 
+                    которые относятся к этому типу данных: <span>Infinity</span>, <span>-Infinity</span> и <span>NaN</span> .
+                </p>
+        
+                <ul class="foot">
+                    <li>
+                        <span> <i>Infinity</i></span> представляет собой математическую <a href="https://ru.wikipedia.org/wiki/%D0%91%D0%B5%D1%81%D0%BA%D0%BE%D0%BD%D0%B5%D1%87%D0%BD%D0%BE%D1%81%D1%82%D1%8C#%D0%92_%D0%BC%D0%B0%D1%82%D0%B5%D0%BC%D0%B0%D1%82%D0%B8%D0%BA%D0%B5">бесконечность</a> ∞. Это особое значение, которое больше любого числа.     
+                    </li>
+                </ul>
+                <p> Мы можем получить его в результате деления на ноль:</p>  
+                <ol>
+                    <li><code>
+                        <div class="numbers">alert</div>( <div class="log">1</div> / <div class="log">0</div> ); // Infinity
+                    </code>
+                    </li>
+                </ol>
+                <p>
+                    Или задать его явно:
+                </p>
+                <ol>
+                    <li>
+                        <code>
+                            <div class="numbers">alert</div>( <div class="log">Infinity</div> ); // Infinity
+                        </code>
+                    </li>
+                </ol>
+        
+                <ul class="foot">
+                    <li>
+                        NaN означает вычислительную ошибку. Это результат неправильной или неопределённой математической операции, например:
+                    </li>
+                </ul>
+                <ol>
+                    <li>
+                        <code>
+                            <div class="numbers">alert</div>( "не число" / 2 ); // NaN, такое деление является ошибкой
+                        </code>
+                    </li>
+                </ol>
+        
+            <p>
+                Значение NaN «прилипчиво». Любая математическая операция с NaN возвращает NaN:
+            </p>
+            <ol>
+                <li>
+                    <code>
+                        <div class="numbers">alert</div>( <div class="log">NaN</div> + <div class="log">1</div> ); // NaN
+                    </code>
+                </li>
+                <li>
+                    <code>
+                        <div class="numbers">alert</div>( <div class="log">3</div> * <div class="log">NaN</div> ); // NaN
+                    </code>
+                </li>
+                <li>
+                    <code>
+                        <div class="numbers">alert</div>( <div class="text">"не число"</div> / <div class="log">2</div> - <div class="log">1</div> ); // NaN
+                    </code>
+                </li>
+            </ol>
+            <p>
+                Если где-то в математическом выражении есть NaN, то оно распространяется на весь результат (есть только одно исключение: NaN ** 0 равно 1).
+            </p>
+            <div class="boxes">
+                <h3><img
+                    class="info" 
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Info_Simple.svg/1200px-Info_Simple.svg.png" 
+                    alt="Иконка информации"
+                    width="15px"
+                    height="15px">
+                    Математическик операции - безопасны</h3>
+                    <p>
+                        Математические операции в JavaScript «безопасны». Мы можем делать что угодно: делить на ноль, обращаться с нечисловыми строками как с числами и т.д.
+                    </p>
+                    <p>
+                        Скрипт никогда не остановится с фатальной ошибкой (не «умрёт»). В худшем случае мы получим NaN как результат выполнения.            </p>
+        
+            </div>
+        
+            <p>
+                Специальные числовые значения относятся к типу «число». Конечно, это не числа в привычном значении этого слова.
+            </p>
+            <p>
+                Подробнее о работе с числами мы поговорим в главе Числа. 
+            </p>
+            <form>
+                <fieldset>
+                    <legend>Проведем небольшой опрос по теме:</legend>
+                    <p>
+                       1) Что из себя представляет числовой тип данных?
+                    </p>
+                    <p>
+                        <input type="radio" name="user-quest" id="quest">
+                        <label for="quest">Числовой тип данных (number) представляет как целочисленные значения, так и числа с плавающей точкой</label>
+                    </p>
+                    <p>
+                        <input type="radio" name="user-quest" id="quest1">
+                        <label for="quest1">Числовой тип данных (number) представляет как целочисленные значения</label>
+                    </p>
+                    <p>
+                        <input type="radio" name="user-quest" id="quest2">
+                        <label for="quest2">Числовой тип данных (number) представляет как дробные значения/label>
+                    </p>
+                    <button class="hover-effect" type="submit">Отправить</button>
+                </fieldset>
+            </form>
+            <form>
+                <fieldset>
+                    <p>
+                        2) Приведите примеры "специальных числовых данных":
+                    </p>
+                    <p>
+                        <input type="radio" name="user-quest" id="quest2.1">
+                        <label for="quest2.1">Infinity, -Infinity и NaN</label>
+                    </p>
+                    <p>
+                        <input type="radio" name="user-quest" id="quest2.2">
+                        <label for="quest2.2">1,2,3 ...</label>
+                    </p>
+                    <p>
+                        <input type="radio" name="user-quest" id="quest2.3">
+                        <label for="quest2.3">1.1,1.2,1.3 ...</label>
+                    </p>
+                    <button class="hover-effect" type="submit">Отправить</button>
+                </fieldset>
+                <br>
+            </form>
+            </section>
+            <section>
+                <div class="header2">
+                    <h3>Biglnt</h2>
+                </div>
+                <p>В JavaScript тип number не может безопасно работать с числами, большими, чем (<span>2 <sup>53</sup>-1</span>) (т. е. 9007199254740991) или меньшими, чем -(<span>2 <sup>53</sup>-1</span>) для отрицательных чисел.</p>
+                <p>Если говорить совсем точно, то, технически, тип number может хранить большие целые числа (до <span>.7976931348623157 * 103081</span>), но за пределами безопасного диапазона целых чисел <span>±(253-1)</span> будет ошибка точности, так как не все цифры помещаются в фиксированную 64-битную память
+                . Поэтому можно хранить «приблизительное» значение.</p>
+                <p>Например, эти два числа (прямо за пределами безопасного диапазона) совпадают:</p>
+                <ol>
+                    <li>
+                        <code>console.<div class="log">log</div>(<div class="numbers">9007199254740991</div> + <div class="numbers">1</div>)); // 9007199254740992</code>
+                    </li>
+                    <li>
+                        <code>console.<div class="log">log</div>(<div class="numbers">9007199254740991</div> + <div class="numbers">2</div>); // 9007199254740992  </code>
+                    </li>
+                </ol>
+                <p>
+                    В большинстве случаев безопасного диапазона чисел от <span>-(253-1)</span> до <span>(253-1)</span> вполне достаточно, но иногда нам требуется весь диапазон действительно гигантских целых чисел без каких-либо ограничений или пропущенных значений внутри него.
+                     Например, в криптографии или при использовании метки времени («timestamp») с микросекундами.
+                </p>
+                <p>
+                    Чтобы создать значение типа BigInt, необходимо добавить n в конец числового литерала:
+                </p>
+                <ol>
+                    <li>
+                        <code class="comments">// символ "n" в конце означает, что это BigInt
+                        </code>
+                    </li>
+                    <li>
+                        <div class="text">const</div> bigInt = <div class="numbers">1234567890123456789012345678901234567890n</div> ;
+                    </li>
+                </ol>
+                <p>
+                    Так как необходимость в использовании BigInt–чисел появляется достаточно редко, мы рассмотрим их в отдельной главе BigInt. Ознакомьтесь с ней, когда вам понадобятся настолько большие числа.
+                </p>
+                <div class="boxes">
+                    <h3><img 
+                        class="info"
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Info_Simple.svg/1200px-Info_Simple.svg.png" 
+                        alt="Иконка информации"
+                        width="15px"
+                        height="15px">
+                        Поддержка</h3>
+                        <p>
+                            В данный момент BigInt поддерживается только в браузерах Firefox, Chrome, Edge и Safari, но не поддерживается в IE.
+                        </p>
+                </div>
+            </section>
+            <section>
+                <div class="header1">
+                    <h2 id="String">Строка</h2>
+                </div>
+                <p>
+                    Строка (<span>string</span>) в JavaScript должна быть заключена в кавычки.
+                </p>
+                <ol>
+                    <li>
+                        <code>
+                            <div class="let">let</div> str = <div class="text">"Привет"</div>;
+                        </code>
+                    </li>
+                    <li>
+                        <code>
+                            <div class="let">let</div> str2 = <div class="text">'Одинарные кавычки тоже подойдут'</div> ;
+                        </code>
+                    </li>
+                    <li>
+                        <code>
+                            <div class="let">let</div> phrase = <div class="text">`Обратные кавычки позволяют встраивать переменные ${str}`</div> ;
+                        </code>
+                    </li>
+                </ol>
+        
+                <p>
+                    В JavaScript существует три типа кавычек.
+                </p>
+                <ol class="none">
+                    <li class="none">
+                        Двойные кавычки: <span>"Привет"</span>.
+                    </li>
+                    <li class="none">
+                        Одинарные кавычки: <span>'Привет'</span>.
+                    </li>
+                    <li class="none">
+                        Обратные кавычки: <span>`Привет`</span>.
+                    </li>
+                </ol>
+                <p>
+                    Двойные или одинарные кавычки являются «простыми», между ними нет разницы в JavaScript.
+                </p>
+                <p>Обратные же кавычки имеют расширенную функциональность. Они позволяют нам встраивать выражения в строку, заключая их в ${…}.
+                </p>
+                <p>
+                    Например:
+                </p>
+                <ol>
+                    <li>
+                        <code>
+                            <div class="let">let</div> name = <div class="text">"Иван"</div>;
+                        </code>
+                    </li>
+                    <li>
+                    </li>
+                    <li>
+                        <code class="comments">
+                            // Вставим переменную
+                        </code>
+                    </li>
+                    <li>
+                        <code>
+                            <div class="log">alert</div>( `Привет, <div class="coube">${</div><div class="coube2">name<div class="coube3">}</div></div> !` ); // Привет, Иван!
+                        </code>
+                    </li>
+                    <li>                
+                    </li>
+                    <li>
+                        <code class="comments">
+                            // Вставим выражение
+                        </code>
+                    </li>
+                    <li>
+                        <code>
+                            <div class="log">alert</div>( `результат: <div class="coube">${</div><div class="coube2"><div class="numbers">1</div> + <div class="numbers">2</div><div class="coube3">}</div></div>` ); // результат: 3
+                        </code>
+                    </li>
+                </ol>
+                <p>
+                    Выражение внутри <span>${…}</span> вычисляется, и его результат становится частью строки.
+                     Мы можем положить туда всё, что угодно: переменную name, или выражение <span>1 + 2</span>, или что-то более сложное.
+                </p>
+                <p>
+                    Обратите внимание, что это можно делать только в обратных кавычках. Другие кавычки не имеют такой функциональности встраивания!
+                </p>
+                <ol>
+                    <li>
+                        <code>
+                            <div class="log">alert</div>( <div class="text"> "результат: ${1 + 2}"</div>);  <code class="comments">// результат: ${1 + 2} (двойные кавычки ничего не делают)</code>
+                        </code>
+                    </li>
+                </ol>
+        
+                <div class="boxes">
+                    <h3><img 
+                        class="info"
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Info_Simple.svg/1200px-Info_Simple.svg.png" 
+                        alt="Иконка информации"
+                        width="15"
+                        height="15">
+                        Нет отдельного типа данных для одного символа.</h3>
+                        <p>
+                            В некоторых языках, например C и Java, для хранения одного символа, например <span>"a"</span> или <span>"%"</span>, существует отдельный тип. 
+                            В языках C и Java это <span>char</span>.               
+                        </p>
+                        <p>
+                            В JavaScript подобного типа нет, есть только тип <span>string</span>. Строка может содержать ноль символов (быть пустой), один символ или множество.
+                        </p>
+                </div>
+            </section>
+        </div>
+    </div>
+    
+
+
+    
+    <footer>
+        <div class="box"></div>
+        <div class=foot>
+            <h2 style="text-align: center;">Information</h2>
+                <p>
+                    Полезные ссылки <a href="https://learn.javascript.ru/function-basics"> Функции</a>
+                </p>
+                <p>
+                    Электронная почта для связи <a href="mailto:haha@mail.com">haha@mail.com</a>
+                </p>
+                <p>
+                    Телефон для связи <a href="tel:+7999999999"> +7(999) 999-99-99</a>
+                </p>
+        </div>
+    </footer>
+</body>
+</html>
